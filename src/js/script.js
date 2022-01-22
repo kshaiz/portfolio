@@ -1,3 +1,5 @@
+import scrollIntoView from 'scroll-into-view-if-needed';
+
 export function importFile(r) {
   let file = {};
   r.keys().map(
@@ -18,3 +20,13 @@ export function openUrl(url, target) {
     link.href=url;
     link.click();
 }
+
+export function jumpTo(node) {
+  scrollIntoView(
+    document.getElementById(node),
+    {
+      behavior: 'smooth',
+      block: 'start'
+    }
+  )
+};

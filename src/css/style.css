@@ -1,0 +1,45 @@
+.port-thumbnail {
+  border: 1px solid #b0bec5;
+  cursor: pointer;
+}
+
+.port-thumbnail:hover {
+  border-color: #9c27b0;
+  box-shadow: 0 0 0 3px #9c27b0;
+}
+
+.glightbox-clean {
+  font-family: "Roboto", "Helvetica", "Arial", sans-serif !important;
+}
+
+.glightbox-clean .gdesc-inner {
+  padding-top: 0;
+}
+
+.glightbox-clean .gslide-title,
+.glightbox-clean .gslide-description {
+  background-color: transparent;
+  text-align: center;
+}
+
+.glightbox-clean .gslide-title {
+  color: #b0bec5;
+}
+
+.glightbox-clean .gslide-description {
+  color: #cfd8dc;
+}
+
+.glightbox-clean .gslide-title {
+  margin: 0 0 .5em 0;
+  font-size: 1rem;
+}
+
+.glightbox-clean .gslide-title {
+  margin: 0 0 .5em 0;
+  font-size: 1rem;
+}
+
+.glightbox-clean a {
+  color: #f06292;
+}
