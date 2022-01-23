@@ -1,7 +1,12 @@
 import { createTheme } from '@material-ui/core/styles';
 import { purple, blueGrey } from '@material-ui/core/colors';
 
+import Breakpoint from './breakpoint';
+
 const Theme = createTheme({
+  root: {
+    backgroundColor: 'red'
+  },
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
@@ -28,26 +33,44 @@ const Theme = createTheme({
     h1: {
       fontSize: '4.209rem',
       fontWeight: 300,
+      [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
+        fontSize: '2.441rem'
+      }
     },
     h2: {
       fontSize: '3.157rem',
       fontWeight: 300,
+      [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
+        fontSize: '1.953rem'
+      }
     },
     h3: {
       fontSize: '2.369rem',
       fontWeight: 300,
+      [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
+        fontSize: '1.563rem'
+      }
     },
     h4: {
       fontSize: '1.777rem',
       fontWeight: 300,
+      [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
+        fontSize: '1.25rem'
+      }
     },
     h5: {
       fontSize: '1.333rem',
       fontWeight: 300,
+      [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
+        fontSize: '1.15rem'
+      }
     },
     h6: {
       fontSize: '1rem',
       fontWeight: 300,
+      [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
+        fontSize: '2.441rem'
+      }
     },
     small: {
       fontSize: '.75rem'
@@ -56,17 +79,20 @@ const Theme = createTheme({
       fontSize: '1rem',
       fontWeight: 300,
     },
-    button: {
-      // fontStyle: 'italic',
+    overline: {
+      lineHeight: 1,
     },
+    button: {},
   },
   overrides: {
     MuiButton: {
       root: {
-        // fontSize: '1.5rem',
+        [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
+          fontSize: '.85rem'
+        },
       },
       sizeLarge: {
-        fontSize: '1.25rem',
+        fontSize: '1.25rem'
       }
     },
   },

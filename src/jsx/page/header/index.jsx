@@ -1,18 +1,44 @@
 import { React } from 'react';
 
-import { Container, Grid, Toolbar, AppBar, Button } from '@material-ui/core';
+import { Container, Grid, Toolbar, AppBar, Button, makeStyles } from '@material-ui/core';
 import { blueGrey } from '@material-ui/core/colors';
 
 import { importFile, downloadFile, jumpTo } from '../../../js/script';
+import Breakpoint from '../../breakpoint';
 
 const resume = importFile(require.context('../../../pdf', false, /\.(pdf)$/));
 
+const useStyles = makeStyles({
+  portAppBar: {
+    width: "100%",
+    backgroundColor: blueGrey[50],
+
+    [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
+      paddingTop: '.35rem',
+      paddingBottom: '.75rem',
+    },
+  },
+  portContainer: {
+    paddingLeft: 0,
+    paddingRight: 0
+  },
+  portToolbar: {
+    marginLeft: '-6px',
+
+    [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
+      marginLeft: '0',
+    },
+  }
+});
+
 const Header = () => {
+  const classes = useStyles();
+
   return (
-    <AppBar position={"fixed"} elevation={0} color="transparent" style={{ backgroundColor: blueGrey[50], width: "100%" }}>
-      <Container style={{ padding: 0 }}>
-        <Toolbar>
-          <Grid container spacing={2} alignItems='center'>
+    <AppBar position={"fixed"} elevation={0} color="transparent" className={classes.portAppBar}>
+      <Container className={classes.portContainer}>
+        <Toolbar className={classes.portToolbar}>
+          <Grid container alignItems='center' justifyContent='center'>
             <Grid item xs="auto">
               <Button variant="text" onClick={() => {jumpTo('about')}}>About</Button>
             </Grid>
@@ -22,9 +48,9 @@ const Header = () => {
             <Grid item xs="auto">
               <Button variant="text" onClick={() => {jumpTo('other-work')}}>Other Works</Button>
             </Grid>
-            <Grid item xs></Grid>
-            <Grid item xs="auto">
-              <Button variant="outlined" onClick={() => {downloadFile( resume, "shaiz-kunhimohammed-resume", "pdf")}}>Download Resume</Button>
+            <Grid item xs={0} md />
+            <Grid item xs={12} md="auto" align="center">
+              <Button variant="outlined" color="primary" onClick={() => {downloadFile( resume, "shaiz-kunhimohammed-resume", "pdf")}}>Download Resume</Button>
             </Grid>
           </Grid>
         </Toolbar>

@@ -1,17 +1,16 @@
 import React from 'react';
 
-import { CssBaseline } from '@material-ui/core';
-import Theme from './theme';
+import { CssBaseline, Divider, Box, Container } from '@material-ui/core';
 import { ThemeProvider } from '@material-ui/core/styles';
+import { blueGrey } from '@material-ui/core/colors';
 
 import '../css/style.css';
-import { blueGrey } from '@material-ui/core/colors';
+import Theme from './theme';
 
 import Header from './page/header/index';
 import About from './page/about/index';
 import CaseStudy from './page/case-study/index';
 import OtherWork from './page/other-work/index';
-
 
 const App = () => {
   return (
@@ -24,12 +23,17 @@ const App = () => {
           <CaseStudy />
           <OtherWork />
         </main>
-        <footer style={{ textAlign: "center", padding: "6rem 0", backgroundColor: blueGrey[50], color: blueGrey[200] }}>
+        <Container align='center'>
+          <Box maxWidth="50%">
+            <Divider/>
+          </Box>
+        </Container>
+        <footer style={{ textAlign: "center", padding: "2rem 0", color: blueGrey[200] }}>
           2022 © Shaiz Kunhimohammed 
         </footer>
       </ThemeProvider>
     </>
-  )
+  );
 }
 
 export default App;
