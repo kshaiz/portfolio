@@ -53,7 +53,7 @@ const ReportingAnalyticsRevamp = () => {
         <Typography variant="h3" style={{ color: pink[300] }}>Reporting &amp; Analytics Revamp</Typography>
         <Typography variant="body1" style={{ marginTop: ".5em" }}>Complete revamp of our data solutions, to enable the users to get easy and powerful insights into their business and take quick decisions in order to maximize the potential of their digital assets. Focus was on not just the descriptive reporting, but also on predictive as well as prescriptive reporting, to facilitate quick decision making.</Typography>
       </Grid>
-      <Hidden smUp>
+      <Hidden only={['md', 'lg', 'xl']}>
         <Grid item xs={12}>
           <img
             src={image['reporting-analytics-beta.png']}
@@ -91,7 +91,7 @@ const ReportingAnalyticsRevamp = () => {
           />
         </Grid>
       </Hidden>
-      <Hidden smDown>
+      <Hidden only={['xs', 'sm']}>
         <Grid item xs="auto">
           <img
             src={image['reporting-analytics-beta.png']}

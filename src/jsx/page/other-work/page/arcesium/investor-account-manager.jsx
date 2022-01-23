@@ -59,7 +59,7 @@ const InvestorAccountManager = () => {
         <Typography variant="h3" style={{ color: pink[300] }}>Investor Accounts Manager</Typography>
         <Typography variant="body1" style={{ marginTop: ".5em" }}>Part of a series of application to onboard and manager new clients to the platform.</Typography>
       </Grid>
-      <Hidden smUp>
+      <Hidden only={['md', 'lg', 'xl']}>
         <Grid item xs={12}>
           <img
             src={image['search-result.png']}
@@ -106,7 +106,7 @@ const InvestorAccountManager = () => {
           />
         </Grid>
       </Hidden>
-      <Hidden smDown>
+      <Hidden only={['xs', 'sm']}>
         <Grid item xs="auto">
           <img
             src={image['search-result.png']}

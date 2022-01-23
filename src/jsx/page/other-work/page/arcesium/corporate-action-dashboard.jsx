@@ -41,7 +41,7 @@ const CorporateActionDashboard = () => {
         <Typography variant="h3" style={{ color: pink[300] }}>Corporate Actions Dashboard</Typography>
         <Typography variant="body1" style={{ marginTop: ".5em" }}>Dashboard to enable co-ordination between different teams (front-office, compliance, middle-office) to seek election preferences and approvals for voluntary corporate actions.</Typography>
       </Grid>
-      <Hidden smUp>
+      <Hidden only={['md', 'lg', 'xl']}>
         <Grid item xs={12} align='center'>
           <img
             src={image['dashboard-voluntary.png']}
@@ -61,7 +61,7 @@ const CorporateActionDashboard = () => {
           />
         </Grid>
       </Hidden>
-      <Hidden smDown>
+      <Hidden only={['xs', 'sm']}>
         <Grid item xs='auto'>
           <img
             src={image['dashboard-voluntary.png']}

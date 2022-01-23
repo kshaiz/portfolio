@@ -40,11 +40,11 @@ const TrueDailyPnl = () => {
               <Typography variant="h3" style={{ color: pink[500] }}>True Daily P&amp;L</Typography>
               <Typography variant="h5">Redesigning process tracker application</Typography>
               <Typography variant="body1" style={{ marginTop: "1em"}}>Revamping an existing application to reduce the time users spent co-ordinating with each other, while ensuring transparency in the data.</Typography>
-              <Hidden smDown>
+              <Hidden only={['xs', 'sm']}>
                 <Button variant="contained" color="primary" style={{ marginTop: "2em" }} onClick={() => {downloadFile( file, "tdp", "pdf")}}>Download Case Study</Button>
               </Hidden>
             </Grid>
-            <Hidden smUp>
+            <Hidden only={['md', 'lg', 'xl']}>
               <Grid item xs={12} md={6}>
                 <img
                   src={image['1.png']}
@@ -58,7 +58,7 @@ const TrueDailyPnl = () => {
                 <Button variant="contained" color="primary" onClick={() => {downloadFile( file, "tdp", "pdf")}}>Download Case Study</Button>
               </Grid>
             </Hidden>
-            <Hidden smDown>
+            <Hidden only={['xs', 'sm']}>
               <Grid item xs={12} md={6}>
                 <img
                   src={image['1.png']}

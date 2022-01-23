@@ -36,11 +36,11 @@ const SystematicRiskFiling = () => {
               <Typography variant="h3" style={{ color: pink[500] }}>Systematic Risk Filing</Typography>
               <Typography variant="h5">Regulatory filing portal design</Typography>
               <Typography variant="body1" style={{ marginTop: "1em"}}>Designing a portal to optimize and efficiently satisfy regulatory reporting requirements for asset management firms.</Typography>
-              <Hidden smDown>
+              <Hidden only={['xs', 'sm']}>
                 <Button variant="contained" color="primary" style={{ marginTop: "2em" }} onClick={() => {downloadFile( file, "srf", "pdf")}}>Download Case Study</Button>
               </Hidden>
             </Grid>
-            <Hidden smUp>
+            <Hidden only={['md', 'lg', 'xl']}>
               <Grid item xs={12} md={6}>
                 <img
                   src={image['1.png']}
@@ -54,7 +54,7 @@ const SystematicRiskFiling = () => {
                 <Button variant="contained" color="primary" onClick={() => {downloadFile( file, "srf", "pdf")}}>Download Case Study</Button>
               </Grid>
             </Hidden>
-            <Hidden smDown>
+            <Hidden only={['xs', 'sm']}>
               <Grid item xs={12} md={6}>
                 <img
                   src={image['1.png']}

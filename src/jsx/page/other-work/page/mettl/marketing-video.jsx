@@ -41,7 +41,7 @@ const MarketingVideo = () => {
         <Typography variant="h3" style={{ color: pink[300] }}>Marketing Video</Typography>
         <Typography variant="body1" style={{ marginTop: ".5em" }}>Created a marketing video for Mettl to highlight their key offerings. As a part of this project, I created story boards, character illustrations and finally created the animation using Adobe Flash.</Typography>
       </Grid>
-      <Hidden smUp>
+      <Hidden only={['md', 'lg', 'xl']}>
         <Grid item xs={12}>
           <img
             src={image['marketing-video.png']}
@@ -61,7 +61,7 @@ const MarketingVideo = () => {
           />
         </Grid>
       </Hidden>
-      <Hidden smDown>
+      <Hidden only={['xs', 'sm']}>
         <Grid item xs="auto">
           <img
             src={image['marketing-video.png']}

@@ -30,12 +30,16 @@ const useStyles = makeStyles({
     height: '100px',
   },
   portResumeButton: {
-    width: '100%',
+    // width: '100%',
+    whiteSpace: 'no-wrap',
 
     [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
       width: 'auto',
     },
   },
+  portContactDetail: {
+    
+  }
 });
 
 const About = () => {
@@ -71,20 +75,20 @@ const About = () => {
                 </Grid>
               </Grid>
               <Grid container spacing={6} style={{ marginTop: '2rem' }}>
-                <Grid item xs={12} md="auto" className={classes.portEducationMaster}>
+                <Grid item xs={12} sm="auto" className={classes.portEducationMaster}>
                   <Typography variant="overline">Master of Design</Typography>
                   <Box mt={1}>
                     <img src={logo['unsw.png']} alt="University of New South Wales Logo" title="University of New South Wales Logo" className={classes.portEducationLogo} />
                   </Box>
                 </Grid>
-                <Grid item xs={12} md="auto" align="center">
+                <Grid item xs={12} sm="auto" align="center">
                   <Typography variant="overline">Bachelor of Design</Typography>
                   <Box mt={1}>
                     <img src={logo['iitg.png']} alt="Indian Institute of Technology Guwahati Logo" title="Indian Institute of Technology Guwahati Logo" className={classes.portEducationLogo} />
                   </Box>
                 </Grid>
                 <Grid item xs={0} md />
-                <Grid item xs={12} md={3}>
+                <Grid item xs={12} md={"auto"} className={classes.portContactDetail}>
                   <Grid container spacing={2} alignItems="center">
                     <Grid item xs />
                     <Grid item xs="auto">
@@ -111,7 +115,7 @@ const About = () => {
         <Box style={{ paddingTop: '4rem', paddingBottom: '2rem' }}>
           <Typography variant="h3" style={{ textTransform: "uppercase" }}>Core Competencies</Typography>
         </Box>
-        <Hidden smDown>
+        <Hidden only={['xs', 'sm']}>
           <Grid container spacing={2} align="center" style={{ paddingBottom: '4rem' }}>
             <Grid item xs={4}>
               <Grid container spacing={2}>
@@ -157,7 +161,7 @@ const About = () => {
             </Grid>
           </Grid>
         </Hidden>
-        <Hidden smUp>
+        <Hidden only={['md', 'lg', 'xl']}>
           <Grid container spacing={2} align="center" style={{ paddingBottom: '4rem' }}>
             <Grid item xs={6}>
               <Grid container spacing={2}>
@@ -206,7 +210,7 @@ const About = () => {
           <Typography variant="h3" style={{ textTransform: "uppercase" }}>Toolsets</Typography>
           <Typography variant="h5" style={{width: "calc(800%/12)", marginTop: '.5rem'}}>Over the course of my career, I have used various tools to produce the deliverables best suited for the project requirements.</Typography>
         </Box>
-        <Hidden smUp>
+        <Hidden only={['md', 'lg', 'xl']}>
           <Grid container spacing={4} align="center" style={{ paddingBottom: '4rem' }}>
             <Grid item xs={4} align="center">
               <Grid container spacing={2}>
@@ -258,7 +262,7 @@ const About = () => {
             </Grid>
           </Grid>
         </Hidden>
-        <Hidden smDown>
+        <Hidden only={['xs', 'sm']}>
           <Grid container spacing={4} align="center" style={{ paddingBottom: '4rem' }}>
             <Grid item xs={3} align="center">
               <Grid container spacing={2}>

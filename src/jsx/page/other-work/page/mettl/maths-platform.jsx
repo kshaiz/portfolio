@@ -41,7 +41,7 @@ const MathsPlatform = () => {
         <Typography variant="h3" style={{ color: pink[300] }}>Tutrr: Online Maths Platform</Typography>
         <Typography variant="body1" style={{ marginTop: ".5em" }}>Skeuomorphic explorations for an online maths platform where kids (aged 12-16 yrs.) can solve problems from various maths topics, get instant feedback on their attempts and improve their performance through constant practice. Given the target audience, the focus was on increasing engagement with a compelling visual design and actionable feedbacks.</Typography>
       </Grid>
-      <Hidden smUp>
+      <Hidden only={['md', 'lg', 'xl']}>
         <Grid item xs={12}>
           <img
             src={image['tutrr-homepage.png']}
@@ -61,7 +61,7 @@ const MathsPlatform = () => {
           />
         </Grid>
       </Hidden>
-      <Hidden smDown>
+      <Hidden only={['xs', 'sm']}>
         <Grid item xs="auto">
           <img
             src={image['tutrr-homepage.png']}

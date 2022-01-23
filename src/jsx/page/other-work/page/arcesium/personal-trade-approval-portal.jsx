@@ -41,7 +41,7 @@ const PersonalTradeApprovalPortal = () => {
         <Typography variant="h3" style={{ color: pink[300] }}>Personal Trade Approvals Portal</Typography>
         <Typography variant="body1" style={{ marginTop: ".5em" }}>Compliance portal for employees to log personal trade requests for approval.</Typography>
       </Grid>
-      <Hidden smUp>
+      <Hidden only={['md', 'lg', 'xl']}>
         <Grid item xs={12}>
           <img
             src={image['zero-state.png']}
@@ -61,7 +61,7 @@ const PersonalTradeApprovalPortal = () => {
           />
         </Grid>
       </Hidden>
-      <Hidden smDown>
+      <Hidden only={['xs', 'sm']}>
         <Grid item xs="auto">
           <img
             src={image['zero-state.png']}
