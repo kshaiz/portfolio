@@ -65,12 +65,12 @@ const About = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h3">
-                    a Product Designer based in Toronto, Canada
+                    a Product Designer currently based in Toronto, Canada
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5" style={{ marginTop: "1em" }}>
-                    I have been working as a designer for 10+ years, translating business goals into products that satisfy user needs. An avid learner, I am always seeking out opportunities to learn &amp; contribute towards user-centered product development.
+                    Originally from India, I started my career over 10 years ago in Sydney (Australia), working on designs which translate business goals into products that satisfy user needs. An avid learner, I am always seeking out opportunities to learn &amp; contribute towards user-centered product development.
                   </Typography>
                 </Grid>
               </Grid>
