@@ -17,26 +17,26 @@ const OtherWork = () => {
         <Typography variant="h2" style={{ textTransform: "uppercase", textAlign: "center" }}>Other Works</Typography>
       </Box>
       <Container>
-        <Grid container spacing={10} direction="column" style={{ paddingBottom: "4rem"}}>
-          <Grid item xs={12}>
+        <Grid container direction="column" style={{ paddingBottom: "4rem"}}>
+          <Grid item xs={12} style={{ paddingBottom: '3rem' }}>
             <CorporateActionDashboard />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ paddingBottom: '3rem' }}>
             <InvestorAccountManager />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ paddingBottom: '3rem' }}>
             <PersonalTradeApprovalPortal />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ paddingBottom: '3rem' }}>
             <EventManager />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ paddingBottom: '3rem' }}>
             <ReportingAnalyticsRevamp />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ paddingBottom: '3rem' }}>
             <MathsPlatform />
           </Grid>
-          <Grid item xs={12}>
+          <Grid item xs={12} style={{ paddingBottom: '3rem' }}>
             <MarketingVideo />
           </Grid>
         </Grid>
