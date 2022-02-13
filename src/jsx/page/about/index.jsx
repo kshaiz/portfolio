@@ -70,7 +70,7 @@ const About = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5" style={{ marginTop: "1em" }}>
-                  I started my career as a UX Designer in Sydney (Australia), translating business goals into products that satisfy user needs. Over the course of 10+ years, I have worked in multi-disciplinary teams, from small startups to multinational corporations, launching products in different sectors such as FinTech, ad marketplace and eLearning. I recently moved to Canada (on PR) and am seeking out opportunities to learn &amp; contribute towards user-centered product development.
+                  I started my career as a UX Designer in Sydney (Australia), translating business goals into products that satisfy user needs. Over the course of 10+ years, I have worked in multi-disciplinary teams, from small startups to multinational corporations, launching products in diverse sectors such as FinTech, ad marketplace and eLearning. I recently moved to Canada (on PR) and am seeking out opportunities to learn &amp; contribute towards user-centered product development.
                   </Typography>
                 </Grid>
               </Grid>
@@ -88,23 +88,43 @@ const About = () => {
                   </Box>
                 </Grid>
                 <Grid item xs={0} md />
-                <Grid item xs={12} md={"auto"} className={classes.portContactDetail}>
-                  <Grid container spacing={2} alignItems="center">
-                    <Grid item xs />
-                    <Grid item xs="auto">
-                      <Link href="https://www.linkedin.com/in/shaizk/" target={"_blank"}>
-                        <img src={logo['linkedin.png']} alt="LinkedIn Logo" title="Visit my LinkedIn Profile" height="36px" />
-                      </Link>
-                    </Grid>
-                    <Grid item xs={"auto"}>
-                      <Typography size="large" style={{ marginTop: "-5px" }}><b>k.shaiz@gmail.com</b></Typography>
-                    </Grid>
-                    <Grid item xs />
-                    <Grid item xs={12} style={{ textAlign: 'center' }}>
-                      <Button variant="contained" color="primary" size="large" className={classes.portResumeButton} onClick={() => {downloadFile( resume, "shaiz-kunhimohammed-resume", "pdf")}}>Download Resume</Button>
+                <Hidden only={['xs', 'sm']}>
+                  <Grid  item xs={12} sm={"auto"}>
+                    <Grid container spacing={2} alignItems="center">
+                      <Grid item xs />
+                      <Grid item xs="auto">
+                        <Link href="https://www.linkedin.com/in/shaizk/" target={"_blank"}>
+                          <img src={logo['linkedin.png']} alt="LinkedIn Logo" title="Visit my LinkedIn Profile" height="36px" />
+                        </Link>
+                      </Grid>
+                      <Grid item xs={"auto"}>
+                        <Typography size="large" style={{ marginTop: "-5px" }}><b>k.shaiz@gmail.com</b></Typography>
+                      </Grid>
+                      <Grid item xs={12} style={{ textAlign: 'right' }}>
+                        <Button variant="contained" color="primary" size="large" className={classes.portResumeButton} onClick={() => {downloadFile( resume, "shaiz-kunhimohammed-resume", "pdf")}}>Download Resume</Button>
+                      </Grid>
                     </Grid>
                   </Grid>
-                </Grid>
+                </Hidden>
+                <Hidden only={['md', 'lg', 'xl']}>
+                  <Grid item item xs={12}>
+                    <Grid container spacing={2} alignItems="center">
+                      <Grid item xs />
+                      <Grid item xs="auto">
+                        <Link href="https://www.linkedin.com/in/shaizk/" target={"_blank"}>
+                          <img src={logo['linkedin.png']} alt="LinkedIn Logo" title="Visit my LinkedIn Profile" height="36px" />
+                        </Link>
+                      </Grid>
+                      <Grid item xs={"auto"}>
+                        <Typography size="large" style={{ marginTop: "-5px" }}><b>k.shaiz@gmail.com</b></Typography>
+                      </Grid>
+                      <Grid item xs />
+                      <Grid item xs={12} style={{ textAlign: 'center' }}>
+                        <Button variant="contained" color="primary" size="large" className={classes.portResumeButton} onClick={() => {downloadFile( resume, "shaiz-kunhimohammed-resume", "pdf")}}>Download Resume</Button>
+                      </Grid>
+                    </Grid>
+                  </Grid>
+                </Hidden>
               </Grid>
             </Container>
           </Grid>
@@ -113,48 +133,62 @@ const About = () => {
       </Box>
       <Container align="center">
         <Box style={{ paddingTop: '4rem', paddingBottom: '2rem' }}>
-          <Typography variant="h3" style={{ textTransform: "uppercase" }}>Core Competencies</Typography>
+          <Typography variant="h3" style={{ textTransform: "uppercase" }}>Areas of Interest</Typography>
         </Box>
         <Hidden only={['xs', 'sm']}>
           <Grid container spacing={2} align="center" style={{ paddingBottom: '4rem' }}>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant="h5">
-                    User Research
+                    User Experience
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5">
-                    Design System
+                    User Interface
                   </Typography>
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <Typography variant="h5">
+                    Design Systems
+                  </Typography>
+                </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5">
                     Visual Design
                   </Typography>
                 </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={3}>
+              <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant="h5">
-                    Responsive Layouts
+                    Design for Scale
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h5">
+                    Responsive Design
                   </Typography>
                 </Grid>
               </Grid>
             </Grid>
-            <Grid item xs={4}>
+            <Grid item xs={3}>
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant="h5">
-                    Wireframes
+                    Prototypes
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5">
-                    Prototypes
+                    Usability
                   </Typography>
                 </Grid>
               </Grid>
@@ -167,12 +201,17 @@ const About = () => {
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant="h5">
-                    User Research
+                    User Experience
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5">
-                    Design System
+                    User Interface
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h5">
+                    Design Systems
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
@@ -186,17 +225,22 @@ const About = () => {
               <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <Typography variant="h5">
-                    Responsive Layouts
+                    Design for Scale
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5">
-                    Wireframes
+                    Responsive Design
                   </Typography>
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5">
                     Prototypes
+                  </Typography>
+                </Grid>
+                <Grid item xs={12}>
+                  <Typography variant="h5">
+                    Usability
                   </Typography>
                 </Grid>
               </Grid>
@@ -215,23 +259,10 @@ const About = () => {
             <Grid item xs={4} align="center">
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <img src={logo['adobeai.png']} alt="Adobe Illustrator" title="Adobe Illustrator" height="100px" />
-                </Grid>
-                <Grid item xs={12}>
-                  <img src={logo['adobeps.png']} alt="Adobe Photoshop" title="Adobe Photoshop" height="100px" />
-                </Grid>
-                <Grid item xs={12}>
-                  <img src={logo['adobeid.png']} alt="Adobe InDesign" title="Adobe InDesign" height="100px" />
+                  <img src={logo['figma.png']} alt="Figma" title="Figma" height="100px" />
                 </Grid>
                 <Grid item xs={12}>
                   <img src={logo['adobexd.png']} alt="Adobe XD" title="Adobe XD" height="100px" />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item xs={4} align="center">
-              <Grid container spacing={2}>
-                <Grid item xs={12}>
-                  <img src={logo['figma.png']} alt="Figma" title="Figma" height="100px" />
                 </Grid>
                 <Grid item xs={12}>
                   <img src={logo['moqups.png']} alt="Moqups" title="Moqups" height="100px" />
@@ -239,13 +270,13 @@ const About = () => {
                 <Grid item xs={12}>
                   <img src={logo['whiteboard.png']} alt="Microsoft Whiteboard" title="Microsoft Whiteboard" height="100px" />
                 </Grid>
-                <Grid item xs={12}>
-                  <img src={logo['react.png']} alt="React" title="React" height="100px" />
-                </Grid>
               </Grid>
             </Grid>
             <Grid item xs={4} align="center">
               <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <img src={logo['react.png']} alt="React" title="React" height="100px" />
+                </Grid>
                 <Grid item xs={12}>
                   <img src={logo['html.png']} alt="HTML" title="HTML" height="100px" />
                 </Grid>
@@ -253,10 +284,20 @@ const About = () => {
                   <img src={logo['js.png']} alt="JavaScript" title="JavaScript" height="100px" />
                 </Grid>
                 <Grid item xs={12}>
-                  <img src={logo['css.png']} alt="CSS" title="CSS" height="100px" />
+                  <img src={logo['scss.png']} alt="SCSS" title="SCSS" height="100px" />
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={4} align="center">
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <img src={logo['adobeai.png']} alt="Adobe Illustrator" title="Adobe Illustrator" height="100px" />
                 </Grid>
                 <Grid item xs={12}>
-                  <img src={logo['scss.png']} alt="SCSS" title="SCSS" height="100px" />
+                  <img src={logo['adobeps.png']} alt="Adobe Photoshop" title="Adobe Photoshop" height="100px" />
+                </Grid>
+                <Grid item xs={12}>
+                  <img src={logo['adobeid.png']} alt="Adobe InDesign" title="Adobe InDesign" height="100px" />
                 </Grid>
               </Grid>
             </Grid>
@@ -267,23 +308,10 @@ const About = () => {
             <Grid item xs={3} align="center">
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <img src={logo['adobeai.png']} alt="Adobe Illustrator" title="Adobe Illustrator" height="100px" />
+                  <img src={logo['figma.png']} alt="Figma" title="Figma" height="100px" />
                 </Grid>
-                <Grid item xs={12}>
-                  <img src={logo['adobeps.png']} alt="Adobe Photoshop" title="Adobe Photoshop" height="100px" />
-                </Grid>
-                <Grid item xs={12}>
-                  <img src={logo['adobeid.png']} alt="Adobe InDesign" title="Adobe InDesign" height="100px" />
-                </Grid>
-              </Grid>
-            </Grid>
-            <Grid item xs={3} align="center">
-              <Grid container spacing={2}>
                 <Grid item xs={12}>
                   <img src={logo['adobexd.png']} alt="Adobe XD" title="Adobe XD" height="100px" />
-                </Grid>
-                <Grid item xs={12}>
-                  <img src={logo['figma.png']} alt="Figma" title="Figma" height="100px" />
                 </Grid>
                 <Grid item xs={12}>
                   <img src={logo['moqups.png']} alt="Moqups" title="Moqups" height="100px" />
@@ -293,7 +321,7 @@ const About = () => {
             <Grid item xs={3} align="center">
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <img src={logo['whiteboard.png']} alt="Microsoft Whiteboard" title="Microsoft Whiteboard" height="100px" />
+                  <img src={logo['react.png']} alt="React" title="React" height="100px" />
                 </Grid>
                 <Grid item xs={12}>
                   <img src={logo['html.png']} alt="HTML" title="HTML" height="100px" />
@@ -306,13 +334,26 @@ const About = () => {
             <Grid item xs={3} align="center">
               <Grid container spacing={2}>
                 <Grid item xs={12}>
-                  <img src={logo['css.png']} alt="CSS" title="CSS" height="100px" />
-                </Grid>
-                <Grid item xs={12}>
                   <img src={logo['scss.png']} alt="SCSS" title="SCSS" height="100px" />
                 </Grid>
                 <Grid item xs={12}>
-                  <img src={logo['react.png']} alt="React" title="React" height="100px" />
+                  <img src={logo['css.png']} alt="CSS" title="CSS" height="100px" />
+                </Grid>
+                <Grid item xs={12}>
+                  <img src={logo['whiteboard.png']} alt="Microsoft Whiteboard" title="Microsoft Whiteboard" height="100px" />
+                </Grid>
+              </Grid>
+            </Grid>
+            <Grid item xs={3} align="center">
+              <Grid container spacing={2}>
+                <Grid item xs={12}>
+                  <img src={logo['adobeai.png']} alt="Adobe Illustrator" title="Adobe Illustrator" height="100px" />
+                </Grid>
+                <Grid item xs={12}>
+                  <img src={logo['adobeps.png']} alt="Adobe Photoshop" title="Adobe Photoshop" height="100px" />
+                </Grid>
+                <Grid item xs={12}>
+                  <img src={logo['adobeid.png']} alt="Adobe InDesign" title="Adobe InDesign" height="100px" />
                 </Grid>
               </Grid>
             </Grid>
