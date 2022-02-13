@@ -1,7 +1,7 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.3fa65a67.css",
-    "main.js": "/portfolio/static/js/main.7a199a38.js",
+    "main.js": "/portfolio/static/js/main.a3a4759f.js",
     "static/media/srf.pdf": "/portfolio/static/media/srf.41159884c52e2b86ef57.pdf",
     "static/media/tdp.pdf": "/portfolio/static/media/tdp.f18664d93598f3dba9bd.pdf",
     "static/media/tutrr-algebra-editor.png": "/portfolio/static/media/tutrr-algebra-editor.80c5f6b67c984d8960e6.png",
@@ -26,17 +26,17 @@
     "static/media/create-wizard.png": "/portfolio/static/media/create-wizard.4668bd7afce3d32b1ad3.png",
     "static/media/whiteboard.png": "/portfolio/static/media/whiteboard.36d39fee19f813f08db3.png",
     "static/media/marketing-video.png": "/portfolio/static/media/marketing-video.6965a6befc057ffd7c3a.png",
+    "static/media/shaiz-kunhimohammed-resume.pdf": "/portfolio/static/media/shaiz-kunhimohammed-resume.1b0f96fa7dd7f5f7bbaa.pdf",
     "static/media/marketing-video-thumbnail.png": "/portfolio/static/media/marketing-video-thumbnail.944268469f05d55f8349.png",
-    "static/media/shaiz-kunhimohammed-resume.pdf": "/portfolio/static/media/shaiz-kunhimohammed-resume.3b34e75dc5281b163e1e.pdf",
     "static/media/iitg.png": "/portfolio/static/media/iitg.4b43edb3494e3e5d98c0.png",
     "static/media/unsw.png": "/portfolio/static/media/unsw.666d7c184677243c763d.png",
     "static/media/react.png": "/portfolio/static/media/react.a3188a496ce8a8fe02cc.png",
     "index.html": "/portfolio/index.html",
     "main.3fa65a67.css.map": "/portfolio/static/css/main.3fa65a67.css.map",
-    "main.7a199a38.js.map": "/portfolio/static/js/main.7a199a38.js.map"
+    "main.a3a4759f.js.map": "/portfolio/static/js/main.a3a4759f.js.map"
   },
   "entrypoints": [
     "static/css/main.3fa65a67.css",
-    "static/js/main.7a199a38.js"
+    "static/js/main.a3a4759f.js"
   ]
 }
