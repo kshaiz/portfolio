@@ -70,7 +70,7 @@ const About = () => {
                 </Grid>
                 <Grid item xs={12}>
                   <Typography variant="h5" style={{ marginTop: "1em" }}>
-                  I started my career as a UX Designer in Sydney (Australia), translating business goals into products that satisfy user needs. Over the course of more than 10 years, I have worked in multi-disciplinary teams, from small startups to multinational corporations, launching products in different sectors such as FinTech, Digital Ads and eLearning. I recently moved to Canada (on PR) and am seeking out opportunities to learn &amp; contribute towards user-centered product development.
+                  I started my career as a UX Designer in Sydney (Australia), translating business goals into products that satisfy user needs. Over the course of 10+ years, I have worked in multi-disciplinary teams, from small startups to multinational corporations, launching products in different sectors such as FinTech, ad marketplace and eLearning. I recently moved to Canada (on PR) and am seeking out opportunities to learn &amp; contribute towards user-centered product development.
                   </Typography>
                 </Grid>
               </Grid>
