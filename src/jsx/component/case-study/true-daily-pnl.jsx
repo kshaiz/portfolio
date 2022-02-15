@@ -79,7 +79,7 @@ const CaseStudyTdp = () => {
                 <Grid item xs></Grid>
                 <Grid item xs={12} md={"auto"} style={{ textAlign: 'right' }}>
                   <Hidden only={['xs', 'sm']}>
-                    <Link style={{ lineHeight: 1.75 }} to='/portfolio/case-study/systematic-risk-filing#application-overview' component={RouterLink}>View True Daily P&amp;L Case Study <ArrowForward style={{width: '16px', height: '16px', position: 'relative', top: '3px' }} /></Link>
+                    <Link style={{ lineHeight: 1.75 }} to='/portfolio/case-study/systematic-risk-filing#application-overview' component={RouterLink}>View Systematic Risk Filing Case Study <ArrowForward style={{width: '16px', height: '16px', position: 'relative', top: '3px' }} /></Link>
                   </Hidden>
                   <Hidden only={['md', 'lg', 'xl']}>
                     <Link style={{ lineHeight: 1.75 }} to='/portfolio/case-study/systematic-risk-filing#title' component={RouterLink}>View Systematic Risk Filing Case Study <ArrowForward style={{width: '16px', height: '16px', position: 'relative', top: '3px' }} /></Link>
