@@ -1,5 +1,5 @@
 import { createTheme } from '@material-ui/core/styles';
-import { purple, blueGrey } from '@material-ui/core/colors';
+import { teal, blueGrey } from '@material-ui/core/colors';
 
 import Breakpoint from './breakpoint';
 
@@ -10,7 +10,7 @@ const Theme = createTheme({
   palette: {
     primary: {
       // light: will be calculated from palette.primary.main,
-      main: purple[500],
+      main: teal[500],
       // dark: will be calculated from palette.primary.main,
       // contrastText: will be calculated to contrast with palette.primary.main
     },
@@ -69,7 +69,7 @@ const Theme = createTheme({
       fontSize: '1rem',
       fontWeight: 300,
       [`@media screen and (max-width: ${Breakpoint.values.sm}px)`]: {
-        fontSize: '2.441rem'
+        fontSize: '1rem'
       }
     },
     small: {
@@ -77,6 +77,10 @@ const Theme = createTheme({
     },
     body1: {
       fontSize: '1rem',
+      fontWeight: 300,
+    },
+    body2: {
+      fontSize: '.875rem',
       fontWeight: 300,
     },
     overline: {
@@ -95,6 +99,11 @@ const Theme = createTheme({
         fontSize: '1.25rem'
       }
     },
+    MuiLink: {
+      root: {
+        cursor: 'pointer'
+      }
+    }
   },
 });
 
