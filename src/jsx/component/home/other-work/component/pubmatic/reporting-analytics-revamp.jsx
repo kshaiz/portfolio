@@ -116,7 +116,7 @@ const ReportingAnalyticsRevamp = () => {
             alt="Exploring display options for showing numbers on the platform"
             height="125px"
             className={"port-thumbnail"}
-            onClick={() => {gallery.openAt()}}
+            onClick={() => {gallery.openAt(2)}}
           />
         </Grid>
         <Grid item xs="auto">
@@ -125,7 +125,7 @@ const ReportingAnalyticsRevamp = () => {
             alt="Snapshots of the contextual interviews. Think aloud protocol was employed to record the user feedback."
             height="125px"
             className={"port-thumbnail"}
-            onClick={() => {gallery.openAt(1)}}
+            onClick={() => {gallery.openAt(3)}}
           />
         </Grid>
       </Hidden>
