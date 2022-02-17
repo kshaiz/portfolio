@@ -23,13 +23,13 @@ const galleryWhiteBoard = GLightbox({
       'description': 'A rough skeleton of the UI to identiy the key areas of content.',
     },
     {
-      'href': image['whiteboard-2.jpg'],
+      'href': image['whiteboard-3.jpg'],
       'type': 'image',
       'title': 'Systematic Risk Filing',
       'description': 'Adding some details to the sketch.',
     },
     {
-      'href': image['whiteboard-2.jpg'],
+      'href': image['whiteboard-4.jpg'],
       'type': 'image',
       'title': 'Systematic Risk Filing',
       'description': 'Adding some details to the sketch.',
