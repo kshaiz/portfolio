@@ -1,7 +1,8 @@
 {
   "files": {
     "main.css": "/portfolio/static/css/main.3fa65a67.css",
-    "main.js": "/portfolio/static/js/main.1e1e5112.js",
+    "main.js": "/portfolio/static/js/main.e5175ccc.js",
+    "static/media/shaiz-kunhimohammed-resume.pdf": "/portfolio/static/media/shaiz-kunhimohammed-resume.49c9588e3d67a5c4cb23.pdf",
     "static/media/final-prototype-additional-detail-panel-1.jpg": "/portfolio/static/media/final-prototype-additional-detail-panel-1.6c744159aa802dc5f320.jpg",
     "static/media/prototype-3.jpg": "/portfolio/static/media/prototype-3.12ce15cdda03a086d996.jpg",
     "static/media/final-prototype-detail-panel-1.jpg": "/portfolio/static/media/final-prototype-detail-panel-1.8e87669063aa1b5abb47.jpg",
@@ -45,7 +46,6 @@
     "static/media/exploration-3.jpg": "/portfolio/static/media/exploration-3.af2d98abe7c138e24ea4.jpg",
     "static/media/whiteboard.png": "/portfolio/static/media/whiteboard.36d39fee19f813f08db3.png",
     "static/media/marketing-video.png": "/portfolio/static/media/marketing-video.6965a6befc057ffd7c3a.png",
-    "static/media/shaiz-kunhimohammed-resume.pdf": "/portfolio/static/media/shaiz-kunhimohammed-resume.e1e7e3309fb3950e155a.pdf",
     "static/media/final-prototype-4.jpg": "/portfolio/static/media/final-prototype-4.45243607cc75059166b0.jpg",
     "static/media/final-prototype-question-card-3.jpg": "/portfolio/static/media/final-prototype-question-card-3.d042e25e2a4c2fd23929.jpg",
     "static/media/final-run-detail-4.jpg": "/portfolio/static/media/final-run-detail-4.dbeea87a5d95aa12c93c.jpg",
@@ -75,10 +75,10 @@
     "static/media/react.png": "/portfolio/static/media/react.a3188a496ce8a8fe02cc.png",
     "index.html": "/portfolio/index.html",
     "main.3fa65a67.css.map": "/portfolio/static/css/main.3fa65a67.css.map",
-    "main.1e1e5112.js.map": "/portfolio/static/js/main.1e1e5112.js.map"
+    "main.e5175ccc.js.map": "/portfolio/static/js/main.e5175ccc.js.map"
   },
   "entrypoints": [
     "static/css/main.3fa65a67.css",
-    "static/js/main.1e1e5112.js"
+    "static/js/main.e5175ccc.js"
   ]
 }
