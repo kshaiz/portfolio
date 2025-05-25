@@ -53,6 +53,8 @@ const Resume = () => {
       })
     }
 
+    handleScroll()
+
     window.addEventListener('scroll', handleScroll)
     return () => window.removeEventListener('scroll', handleScroll)
   }, [])
@@ -90,7 +92,7 @@ const Resume = () => {
         sx={{
           backgroundColor: '#FFFFFF',
           borderRadius: `0 0 ${Theme.shape.borderRadiusLarge}px ${Theme.shape.borderRadiusLarge}px`,
-          padding: `${Theme.spacing(8)}`,
+          padding: `${Theme.spacing(4)}`,
         }}
         id="pg-headline"
       >
@@ -99,7 +101,7 @@ const Resume = () => {
           component="h1"
           sx={{
             fontWeight: Theme.typography.fontWeightBold,
-            color: Theme.palette.text.heading,
+            color: '#05032a',
           }}
         >
           Resume
@@ -123,7 +125,7 @@ const Resume = () => {
               size="small"
               label="Work Experience"
               onClick={() => scrollToSection('sectionExperience')}
-              color="secondary"
+              color="quickNav"
               variant={
                 activeSection === 'sectionExperience' ? 'filled' : 'outlined'
               }
@@ -138,7 +140,7 @@ const Resume = () => {
               size="small"
               label="Education"
               onClick={() => scrollToSection('sectionEducation')}
-              color="secondary"
+              color="quickNav"
               variant={
                 activeSection === 'sectionEducation' ? 'filled' : 'outlined'
               }
@@ -166,7 +168,7 @@ const Resume = () => {
         </Stack>
       </Stack>
 
-      <PageContent style={{ paddingLeft: '12px' }}>
+      <PageContent>
         <Stack spacing={8}>
           <Stack spacing={8} ref={sectionExperienceRef} sx={{ mt: 4 }}>
             <Experience />

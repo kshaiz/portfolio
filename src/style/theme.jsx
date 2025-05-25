@@ -145,6 +145,23 @@ const Theme = createTheme({
                 },
               },
             },
+            {
+              props: { variant: 'outlined', color: 'quickNav' },
+              style: {
+                '&:not(:hover)': {
+                  color: '#05032a',
+                },
+              },
+            },
+            {
+              props: { variant: 'filled', color: 'quickNav' },
+              style: {
+                '&:not(:hover)': {
+                  backgroundColor: '#05032a',
+                  color: 'white',
+                },
+              },
+            },
           ],
         },
       },

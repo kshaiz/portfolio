@@ -7,6 +7,7 @@ import Header from './components/header'
 import Footer from './components/footer'
 import Home from './pages/home'
 import Resume from './pages/resume'
+import OtherWorks from './pages/other-works'
 
 function App() {
   let page = <Home />
@@ -15,6 +16,11 @@ function App() {
     case '/portfolio/resume/':
       document.title = 'Shaiz | Resume'
       page = <Resume />
+      break
+    case '/portfolio/other-works':
+    case '/portfolio/other-works/':
+      document.title = 'Shaiz | Other Works'
+      page = <OtherWorks />
       break
     default:
       document.title = 'Shaiz | Product Designer | Canada'

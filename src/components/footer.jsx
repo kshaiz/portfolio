@@ -15,8 +15,8 @@ const Footer = () => {
         textAlign: 'center',
       }}
     >
-      <Typography variant="caption" color="text.disabled">
-        ©{currentYear}, Shaiz Kunhimohammed
+      <Typography variant="caption" color="text.secondary">
+        {currentYear}, Shaiz Kunhimohammed
       </Typography>
     </footer>
   )

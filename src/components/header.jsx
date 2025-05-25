@@ -29,7 +29,7 @@ const Header = () => {
             <NavLink href="/portfolio/" component="a">
               Case Studies
             </NavLink>
-            <NavLink href="/other-works/" component="a">
+            <NavLink href="/portfolio/other-works/" component="a">
               Other works
             </NavLink>
             <NavLink href="/portfolio/resume/" component="a">
