@@ -9,6 +9,23 @@ import Home from './pages/home'
 import Resume from './pages/resume'
 import OtherWorks from './pages/other-works'
 
+import { createBrowserRouter, RouterProvider } from 'react-router-dom'
+
+const router = createBrowserRouter([
+  {
+    path: '/portfolio',
+    element: <Home />,
+  },
+  {
+    path: '/portfolio/resume',
+    element: <Resume />,
+  },
+  {
+    path: '/portfolio/other-works',
+    element: <OtherWorks />,
+  },
+])
+
 function App() {
   let page = <Home />
   switch (window.location.pathname) {
@@ -55,7 +72,9 @@ function App() {
       <ThemeProvider theme={theme}>
         <div className="app">
           <Header />
-          <main>{page}</main>
+          <main>
+            <RouterProvider router={router} />
+          </main>
           <Footer />
         </div>
       </ThemeProvider>
