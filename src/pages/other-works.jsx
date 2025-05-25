@@ -1,8 +1,9 @@
 import { Stack, Chip, Divider, Button, Typography } from '@mui/material'
 import { useEffect } from 'react'
 import { PageContent } from '../components/other'
-import Experience from './resume/experience'
 import Theme from '../style/theme'
+import arccadashboardvoluntary from '../assets/other-works/arcesium/corporate-action/dashboard-voluntary.png'
+import arccadashboardmandatory from '../assets/other-works/arcesium/corporate-action/dashboard-mandatory.png'
 
 const OtherWorks = () => {
   useEffect(() => {
@@ -64,20 +65,34 @@ const OtherWorks = () => {
             <Stack direction={'row'} spacing={2}>
               <div
                 style={{
-                  width: '240px',
-                  height: '160px',
-                  backgroundColor: 'grey',
+                  backgroundColor: 'rgba(0,0,0,.05)',
                   borderRadius: Theme.shape.borderRadius,
                 }}
-              ></div>
+              >
+                <img
+                  alt="Product screenshot"
+                  src={arccadashboardvoluntary}
+                  style={{
+                    height: '160px',
+                    display: 'block',
+                  }}
+                />
+              </div>
               <div
                 style={{
-                  width: '240px',
-                  height: '160px',
-                  backgroundColor: 'grey',
+                  backgroundColor: 'rgba(0,0,0,.05)',
                   borderRadius: Theme.shape.borderRadius,
                 }}
-              ></div>
+              >
+                <img
+                  alt="Product screenshot"
+                  src={arccadashboardmandatory}
+                  style={{
+                    height: '160px',
+                    display: 'block',
+                  }}
+                />
+              </div>
             </Stack>
           </Stack>
 
