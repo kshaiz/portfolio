@@ -107,9 +107,17 @@ export const ResumeExperience = ({
           direction={'row'}
           spacing={2}
           alignItems="center"
-          sx={{ color: 'rgb(240, 98, 146)' }}
+          sx={{ color: Theme.palette.text.headingAlt }}
         >
-          <Typography variant="h4">{title}</Typography>
+          <Typography
+            variant="h4"
+            sx={{
+              fontWeight: Theme.typography.fontWeightBold,
+              textTransform: 'uppercase',
+            }}
+          >
+            {title}
+          </Typography>
           <Divider orientation="vertical" sx={{ height: 16 }} />
           <Typography variant="h4">{company}</Typography>
         </Stack>
@@ -397,6 +405,51 @@ export const HomeCaseStudy = ({
               : 'linear-gradient(65deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.15) 100%)',
         }}
       ></div>
+    </Stack>
+  )
+}
+
+export const Slideshow = ({ title, description, gallery, ...props }) => {
+  return (
+    <Stack direction={'column'} spacing={2} className="fade-in-block">
+      <div>
+        <Typography
+          variant="h4"
+          sx={{
+            fontWeight: Theme.typography.fontWeightBold,
+            textTransform: 'uppercase',
+            color: Theme.palette.text.headingAlt,
+          }}
+        >
+          {title}
+        </Typography>
+        <Typography variant="body1">{description}</Typography>
+      </div>
+      <Stack direction={'row'} sx={{ flexWrap: 'wrap', gap: Theme.spacing(2) }}>
+        {gallery &&
+          gallery.elements.length > 0 &&
+          gallery.elements.map((imgSrc, idx) => (
+            <div
+              key={idx}
+              style={{
+                backgroundColor: 'rgba(0, 0, 0, .05)',
+                borderRadius: Theme.shape.borderRadius,
+                cursor: 'pointer',
+              }}
+              onClick={() => gallery.openAt(idx)}
+            >
+              {console.log(imgSrc.href)}
+              <img
+                alt="Product screenshot"
+                src={imgSrc.thumbHref ? imgSrc.thumbHref : imgSrc.href}
+                style={{
+                  height: '160px',
+                  display: 'block',
+                }}
+              />
+            </div>
+          ))}
+      </Stack>
     </Stack>
   )
 }

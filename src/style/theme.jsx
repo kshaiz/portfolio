@@ -12,6 +12,7 @@ const palette = {
     secondary: '#05032a67',
     disabled: '#05032a40',
     heading: '#7a4bc8',
+    headingAlt: '#f06292',
   },
 }
 
@@ -26,6 +27,7 @@ const Theme = createTheme({
       secondary: palette.text.secondary,
       disabled: palette.text.disabled,
       heading: palette.text.heading,
+      headingAlt: palette.text.headingAlt,
     },
   },
   shape: {

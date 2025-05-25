@@ -5,6 +5,7 @@ import Experience from './resume/experience'
 import Education from './resume/education'
 import Toolset from './resume/toolset'
 import Theme from '../style/theme'
+import ResumePdf from '../assets/resume/shaiz-kunhimohammed-resume.pdf'
 
 const Resume = () => {
   const [activeSection, setActiveSection] = useState('sectionExperience')
@@ -157,9 +158,11 @@ const Resume = () => {
               variant="outlined"
               onClick={() => {
                 const link = document.createElement('a')
-                link.href = '../assets/shaiz-kunhimohammed-resume.pdf'
-                link.download = '../assets/shaiz-kunhimohammed-resume.pdf'
+                link.href = ResumePdf
+                link.download = ResumePdf
+                document.body.appendChild(link)
                 link.click()
+                document.body.removeChild(link)
               }}
             >
               Download Copy
