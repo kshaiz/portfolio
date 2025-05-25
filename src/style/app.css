@@ -6,7 +6,7 @@ body {
   background: rgba(63, 94, 251, 0.15);
   background: radial-gradient(
     circle at 25% -260%,
-    rgba(94, 120, 245, 0.25) 50%,
+    rgba(94, 120, 245, 0.15) 50%,
     rgba(197, 94, 245, 0.03) 100%
   );
   color: var(--mui-palette-text-primary);

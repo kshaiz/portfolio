@@ -9,7 +9,7 @@ const NavLink = ({ href, children, ...props }) => {
       href={href}
       {...props}
       className={
-        pathName === href.replace(/\/+$/, '') ? 'nav-link--active' : ''
+        pathName === href.replace(/\/+$/, '') ? 'nav-link--active' : 'nav-link'
       }
     >
       {children}
@@ -29,7 +29,9 @@ const Header = () => {
             <NavLink href="/portfolio/" component="a">
               Case Studies
             </NavLink>
-            <Button>Other works</Button>
+            <NavLink href="/other-works/" component="a">
+              Other works
+            </NavLink>
             <NavLink href="/portfolio/resume/" component="a">
               Resume
             </NavLink>

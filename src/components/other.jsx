@@ -26,28 +26,30 @@ export const Headline = ({
   return (
     <div
       id="pg-headline"
-      style={{ padding: `${Theme.spacing(8)} 0`, ...props.style }}
+      style={{
+        padding: `${Theme.spacing(8)}`,
+        ...props.style,
+      }}
     >
       <Typography
         variant="h1"
         component="h1"
-        sx={{ fontWeight: Theme.typography.fontWeightBold }}
+        sx={{
+          fontWeight: Theme.typography.fontWeightBold,
+          color: Theme.palette.text.heading,
+        }}
       >
         {heading}
       </Typography>
       <Typography
         variant="h4"
         component="p"
-        sx={{ fontWeight: Theme.typography.fontWeightBold }}
+        sx={{ fontWeight: Theme.typography.fontWeightBold, mt: 1 }}
       >
         {subHeading}
       </Typography>
       {description && (
-        <Typography
-          variant="body1"
-          component="p"
-          sx={{ marginTop: Theme.spacing(1.5) }}
-        >
+        <Typography variant="body1" component="p" sx={{ mt: 2 }}>
           {description}
         </Typography>
       )}
@@ -57,7 +59,13 @@ export const Headline = ({
 
 export const PageContent = ({ children, ...props }) => {
   return (
-    <div style={{ paddingBottom: Theme.spacing(4), position: 'relative' }}>
+    <div
+      style={{
+        padding: `${Theme.spacing(8)} 0`,
+        position: 'relative',
+        ...props.style,
+      }}
+    >
       {children}
     </div>
   )
@@ -202,24 +210,24 @@ export const HomeCaseStudySmall = ({
   ...props
 }) => {
   let bgColor = pink[50]
-  let bgColorTitle = pink[200]
+  let bgColorTitle = pink[100]
 
   switch (color) {
     case 'deepPurple':
       bgColor = deepPurple[50]
-      bgColorTitle = deepPurple[200]
+      bgColorTitle = deepPurple[100]
       break
     case 'teal':
       bgColor = teal[50]
-      bgColorTitle = teal[200]
+      bgColorTitle = teal[100]
       break
     case 'pink':
       bgColor = pink[50]
-      bgColorTitle = pink[200]
+      bgColorTitle = pink[100]
       break
     default:
       bgColor = pink[50]
-      bgColorTitle = pink[200]
+      bgColorTitle = pink[100]
   }
 
   return (
@@ -240,7 +248,7 @@ export const HomeCaseStudySmall = ({
           <div
             style={{
               position: 'relative',
-              height: '240px',
+              height: '360px',
               // overflow: 'hidden',
             }}
           >
@@ -249,9 +257,9 @@ export const HomeCaseStudySmall = ({
                 position: 'absolute',
                 width: '180%',
                 height: '180%',
-                top: Theme.spacing(8),
-                left: `${tilePosition === 'left' ? '' : Theme.spacing(8)}`,
-                right: `${tilePosition === 'right' ? '' : Theme.spacing(8)}`,
+                top: Theme.spacing(4),
+                left: `${tilePosition === 'left' ? '' : Theme.spacing(4)}`,
+                right: `${tilePosition === 'right' ? '' : Theme.spacing(4)}`,
                 borderTopLeftRadius: `${
                   tilePosition === 'left' ? '' : `${Theme.shape.borderRadius}px`
                 }`,
@@ -287,6 +295,9 @@ export const HomeCaseStudySmall = ({
               padding: 4,
               zIndex: 1,
               backgroundColor: bgColorTitle,
+              position: 'absolute',
+              width: '100%',
+              bottom: 0,
             }}
           >
             <Typography variant="h4" component="h3">
@@ -327,6 +338,7 @@ export const HomeCaseStudy = ({
         backgroundSize: 'cover',
         backgroundPosition: 'center',
         overflow: 'hidden',
+        position: 'relative',
       }}
     >
       <div style={{ position: 'relative', width: '100%' }}>
@@ -364,6 +376,20 @@ export const HomeCaseStudy = ({
           )}
         </Box>
       </div>
+      <div
+        style={{
+          position: 'absolute',
+          top: 0,
+          left: imagePosition === 'left' ? '-16px' : '',
+          right: imagePosition === 'left' ? '' : '-16px',
+          width: '100%',
+          height: '100%',
+          background:
+            imagePosition === 'left'
+              ? 'linear-gradient(65deg,rgba(0, 0, 0, .15) 0%, rgba(0, 0, 0, 0) 25%)'
+              : 'linear-gradient(65deg, rgba(0, 0, 0, 0) 75%, rgba(0, 0, 0, 0.15) 100%)',
+        }}
+      ></div>
     </Stack>
   )
 }

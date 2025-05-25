@@ -4,6 +4,7 @@ import { Headline, PageContent } from '../components/other'
 import Experience from './resume/experience'
 import Education from './resume/education'
 import Toolset from './resume/toolset'
+import Theme from '../style/theme'
 
 const Resume = () => {
   const [activeSection, setActiveSection] = useState('sectionExperience')
@@ -36,7 +37,7 @@ const Resume = () => {
         .getElementById('pg-headline')
         .getBoundingClientRect().top
 
-      if (pageHeadlineTop < -154) {
+      if (pageHeadlineTop < -120) {
         setQuickNavigationVisibility(false)
       } else {
         setQuickNavigationVisibility(true)
@@ -82,16 +83,34 @@ const Resume = () => {
 
   return (
     <>
-      <Headline heading="Resume" subHeading="How I got here" />
-
-      <PageContent>
+      <Stack
+        direction="column"
+        spacing={2}
+        // alignItems={'center'}
+        sx={{
+          backgroundColor: '#FFFFFF',
+          borderRadius: `0 0 ${Theme.shape.borderRadiusLarge}px ${Theme.shape.borderRadiusLarge}px`,
+          padding: `${Theme.spacing(8)}`,
+        }}
+        id="pg-headline"
+      >
+        <Typography
+          variant="h1"
+          component="h1"
+          sx={{
+            fontWeight: Theme.typography.fontWeightBold,
+            color: Theme.palette.text.heading,
+          }}
+        >
+          Resume
+        </Typography>
         <Stack
           direction="row"
           spacing={2}
           style={{
-            position: quickNavigationVisibility ? 'absolute' : 'fixed',
-            top: quickNavigationVisibility ? '' : 28,
-            marginLeft: quickNavigationVisibility ? '' : 76,
+            position: quickNavigationVisibility ? 'static' : 'fixed',
+            top: quickNavigationVisibility ? '' : 10,
+            marginLeft: quickNavigationVisibility ? '' : 16,
             zIndex: quickNavigationVisibility ? '' : 1001,
             transition: 'all 0.3s ease-in-out',
           }}
@@ -145,19 +164,13 @@ const Resume = () => {
             </Button>
           </Stack>
         </Stack>
-        <Stack spacing={8} pt={8}>
-          <div ref={sectionExperienceRef}>
-            <Typography
-              variant="h2"
-              component="h2"
-              className="fade-in-block text--serif"
-            >
-              Work Experience
-            </Typography>
-            <Stack spacing={8} ref={sectionExperienceRef} sx={{ mt: 4 }}>
-              <Experience />
-            </Stack>
-          </div>
+      </Stack>
+
+      <PageContent style={{ paddingLeft: '12px' }}>
+        <Stack spacing={8}>
+          <Stack spacing={8} ref={sectionExperienceRef} sx={{ mt: 4 }}>
+            <Experience />
+          </Stack>
           <Divider
             orientation="horizontal"
             className="fade-in-block"

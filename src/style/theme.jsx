@@ -4,13 +4,14 @@ import { createTheme } from '@mui/material/styles'
 
 const palette = {
   primary: {
-    main: '#785ca7',
+    main: '#7a4bc8',
     contrastText: '#fff',
   },
   text: {
     primary: '#05032a',
     secondary: '#05032a67',
     disabled: '#05032a40',
+    heading: '#7a4bc8',
   },
 }
 
@@ -24,6 +25,7 @@ const Theme = createTheme({
       primary: palette.text.primary,
       secondary: palette.text.secondary,
       disabled: palette.text.disabled,
+      heading: palette.text.heading,
     },
   },
   shape: {
@@ -179,8 +181,12 @@ const Theme = createTheme({
                 borderColor: 'transparent',
                 padding: '4px 8px',
 
+                '&.nav-link:not(:hover)': {
+                  color: '#05032a',
+                },
+
                 '&.nav-link--active:not(:hover)': {
-                  color: palette.primary.main,
+                  color: '#05032a',
                   textDecorationLine: 'underline',
                   textUnderlineOffset: '9px',
                   textDecorationThickness: '2px',
@@ -192,6 +198,10 @@ const Theme = createTheme({
               style: {
                 '&:hover': {
                   borderColor: palette.primary.main,
+
+                  '&[class*=nav-link]': {
+                    borderColor: '#05032a',
+                  },
                 },
               },
             },
