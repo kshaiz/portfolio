@@ -103,7 +103,12 @@ export const ResumeExperience = ({
     >
       <div style={{ flex: '0 0 32px', paddingTop: 2 }}>{countrySVG}</div>
       <div>
-        <Stack direction={'row'} spacing={2} alignItems="center">
+        <Stack
+          direction={'row'}
+          spacing={2}
+          alignItems="center"
+          sx={{ color: 'rgb(240, 98, 146)' }}
+        >
           <Typography variant="h4">{title}</Typography>
           <Divider orientation="vertical" sx={{ height: 16 }} />
           <Typography variant="h4">{company}</Typography>
@@ -154,7 +159,9 @@ export const ResumeEducation = ({
         style={{ width: 82, height: 82 }}
       />
       <div>
-        <Typography variant="h4">{degree}</Typography>
+        <Typography variant="h4" color="rgb(240, 98, 146)">
+          {degree}
+        </Typography>
         <Typography variant="subtitle1" mt={0.25}>
           {institution}
         </Typography>

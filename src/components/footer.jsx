@@ -9,7 +9,8 @@ const Footer = () => {
       style={{
         padding: `${Theme.spacing(1)}`,
         borderRadius: Theme.shape.borderRadius,
-        background: 'rgba(230, 231, 253, 0.45)',
+        // background: 'rgba(230, 231, 253, 0.45)',
+        background: 'rgba(0, 0, 0, 0.05)',
         margin: `${Theme.spacing(4)} 0 ${Theme.spacing(1)}`,
         textAlign: 'center',
       }}
