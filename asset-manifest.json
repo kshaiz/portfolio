@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.aed8bb31.css",
-    "main.js": "/portfolio/static/js/main.6ba51307.js",
+    "main.css": "/portfolio/static/css/main.30740ab4.css",
+    "main.js": "/portfolio/static/js/main.02b8b319.js",
     "static/js/453.1407b060.chunk.js": "/portfolio/static/js/453.1407b060.chunk.js",
     "static/media/shaiz-kunhimohammed-resume.pdf": "/portfolio/static/media/shaiz-kunhimohammed-resume.49c9588e3d67a5c4cb23.pdf",
     "static/media/tutrr-algebra-editor.png": "/portfolio/static/media/tutrr-algebra-editor.80c5f6b67c984d8960e6.png",
@@ -37,12 +37,12 @@
     "static/media/flag-au.svg": "/portfolio/static/media/flag-au.e713c2345fdc7a14c7b0e0169db61706.svg",
     "static/media/flag-ca.svg": "/portfolio/static/media/flag-ca.46db959aa77d6b5a39b72e6dc28b8a2b.svg",
     "index.html": "/portfolio/index.html",
-    "main.aed8bb31.css.map": "/portfolio/static/css/main.aed8bb31.css.map",
-    "main.6ba51307.js.map": "/portfolio/static/js/main.6ba51307.js.map",
+    "main.30740ab4.css.map": "/portfolio/static/css/main.30740ab4.css.map",
+    "main.02b8b319.js.map": "/portfolio/static/js/main.02b8b319.js.map",
     "453.1407b060.chunk.js.map": "/portfolio/static/js/453.1407b060.chunk.js.map"
   },
   "entrypoints": [
-    "static/css/main.aed8bb31.css",
-    "static/js/main.6ba51307.js"
+    "static/css/main.30740ab4.css",
+    "static/js/main.02b8b319.js"
   ]
 }
