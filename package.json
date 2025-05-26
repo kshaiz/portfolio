@@ -1,7 +1,7 @@
 {
   "name": "portfolio",
   "version": "0.1.0",
-  "homepage": "https://kshaiz.github.io/portfolio",
+  "homepage": "https://kshaiz.github.io/portfolio/#",
   "private": true,
   "peerDependencies": {
     "react": "^17.0.0 || ^18.0.0 || ^19.0.0",
@@ -15,6 +15,7 @@
     "react-router-hash-link": "^2.4.3"
   },
   "devDependencies": {
+    "@mui/icons-material": "^7.1.0",
     "@testing-library/dom": "^10.4.0",
     "@testing-library/jest-dom": "^6.6.3",
     "@testing-library/react": "^16.3.0",

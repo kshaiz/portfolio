@@ -201,6 +201,13 @@ const OtherWorks = () => {
           el.style.transform = 'translateY(0)'
         }
       })
+      const heading = document.querySelector('.fade-in-heading')
+      console.log(heading)
+      const rect = heading.getBoundingClientRect()
+      if (rect.top < window.innerHeight) {
+        heading.style.opacity = 1
+        heading.style.transform = 'translateY(0)'
+      }
     }
 
     handleScroll()
@@ -220,6 +227,7 @@ const OtherWorks = () => {
           padding: `${Theme.spacing(4)}`,
         }}
         id="pg-headline"
+        className="fade-in-heading"
       >
         <Typography
           variant="h1"

@@ -9,22 +9,7 @@ import Home from './pages/home'
 import Resume from './pages/resume'
 import OtherWorks from './pages/other-works'
 
-import { createBrowserRouter, RouterProvider } from 'react-router-dom'
-
-const router = createBrowserRouter([
-  {
-    path: '/portfolio',
-    element: <Home />,
-  },
-  {
-    path: '/portfolio/resume',
-    element: <Resume />,
-  },
-  {
-    path: '/portfolio/other-works',
-    element: <OtherWorks />,
-  },
-])
+import { Routes, Route, HashRouter } from 'react-router-dom'
 
 function App() {
   let page = <Home />
@@ -32,16 +17,13 @@ function App() {
     case '/portfolio/resume':
     case '/portfolio/resume/':
       document.title = 'Shaiz | Resume'
-      page = <Resume />
       break
     case '/portfolio/other-works':
     case '/portfolio/other-works/':
       document.title = 'Shaiz | Other Works'
-      page = <OtherWorks />
       break
     default:
       document.title = 'Shaiz | Product Designer | Canada'
-      page = <Home />
       break
   }
 
@@ -68,16 +50,22 @@ function App() {
 
   return (
     <>
-      <CssBaseline />
-      <ThemeProvider theme={theme}>
-        <div className="app">
-          <Header />
-          <main>
-            <RouterProvider router={router} />
-          </main>
-          <Footer />
-        </div>
-      </ThemeProvider>
+      <HashRouter>
+        <CssBaseline />
+        <ThemeProvider theme={theme}>
+          <div className="app">
+            <Header />
+            <main>
+              <Routes>
+                <Route path="/" element={<Home />} />
+                <Route path="/other-works" element={<OtherWorks />} />
+                <Route path="/resume" element={<Resume />} />
+              </Routes>
+            </main>
+            <Footer />
+          </div>
+        </ThemeProvider>
+      </HashRouter>
     </>
   )
 }

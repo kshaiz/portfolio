@@ -35,11 +35,11 @@ main {
   padding: 0 calc(2 * var(--mui-spacing));
 }
 
-ul {
+ul.bullet {
   padding-left: calc(2 * var(--mui-spacing));
 }
 
-ul li:not(:last-child) {
+ul.bullet li:not(:last-child) {
   margin-bottom: calc(var(--mui-spacing));
 }
 
@@ -50,6 +50,12 @@ b {
 .fade-in-block {
   opacity: 0;
   transform: translateY(64px);
+  transition: opacity 0.5s ease-out, transform 0.5s ease-out;
+}
+
+.fade-in-heading {
+  opacity: 0;
+  transform: translateY(-64px);
   transition: opacity 0.5s ease-out, transform 0.5s ease-out;
 }
 

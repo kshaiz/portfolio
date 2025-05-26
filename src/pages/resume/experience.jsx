@@ -10,7 +10,7 @@ const Experience = () => {
         period="Apr 2022 - Present"
         location="Toronto, Canada"
       >
-        <ul>
+        <ul className="bullet">
           <li>
             <b>Led design for multiple high-impact products</b>, including a
             generative AI-powered content optimization tool, a business listings
@@ -39,7 +39,7 @@ const Experience = () => {
         location="Hyderabad, India"
         period="Jul 2015 - Dec 2021"
       >
-        <ul>
+        <ul className="bullet">
           <li>
             <b>Owned the overall design direction</b> at the firm, leading
             end-to-end product design for platforms used by top-tier financial
@@ -69,7 +69,7 @@ const Experience = () => {
         location="Hyderabad, India"
         period="Jan 2015 - Jun 2021"
       >
-        <ul>
+        <ul className="bullet">
           <li>
             <b>
               Took on a foundational design role during the pre-launch phase of
@@ -87,7 +87,7 @@ const Experience = () => {
         location="Pune, India"
         period="Jan 2014 - Jan 2015"
       >
-        <ul>
+        <ul className="bullet">
           <li>
             <b>Partnered with a fellow designer and lead developer</b> to
             overhaul the firm's reporting and analytics tool, exploring

@@ -104,9 +104,9 @@ export const ResumeExperience = ({
       <div style={{ flex: '0 0 32px', paddingTop: 2 }}>{countrySVG}</div>
       <div>
         <Stack
-          direction={'row'}
-          spacing={2}
-          alignItems="center"
+          direction={{ xs: 'column', md: 'row' }}
+          spacing={{ xs: 1, md: 2 }}
+          alignItems={{ xs: '', md: 'baseline' }}
           sx={{ color: Theme.palette.text.headingAlt }}
         >
           <Typography
@@ -118,8 +118,7 @@ export const ResumeExperience = ({
           >
             {title}
           </Typography>
-          <Divider orientation="vertical" sx={{ height: 16 }} />
-          <Typography variant="h4">{company}</Typography>
+          <Typography variant="h5">{company}</Typography>
         </Stack>
         <Typography variant="body2" mt={1} component="div">
           <Stack direction={'row'} spacing={1} alignItems="center">
@@ -269,6 +268,7 @@ export const HomeCaseStudySmall = ({
           >
             <Box
               sx={{
+                display: { xs: 'none', md: 'block' },
                 position: 'absolute',
                 width: '180%',
                 height: '180%',
@@ -292,19 +292,6 @@ export const HomeCaseStudySmall = ({
               }}
             />
           </div>
-          {/* <div
-            style={{
-              position: 'absolute',
-              top: 0,
-              left: 0,
-              width: '100%',
-              height: '100%',
-              backdropFilter: 'blur(8px)',
-              backgroundColor: 'rgba(255, 255, 255, 0.65)',
-              maskImage:
-                'linear-gradient(transparent 150px, rgba(0, 0, 0, 0.65) 200px, black 70%)',
-            }}
-          ></div> */}
           <Box
             sx={{
               padding: 4,
@@ -312,7 +299,11 @@ export const HomeCaseStudySmall = ({
               backgroundColor: bgColorTitle,
               position: 'absolute',
               width: '100%',
+              height: { xs: '100%', md: '' },
               bottom: 0,
+              display: { xs: 'flex', md: '' },
+              flexDirection: { xs: 'column', md: '' },
+              justifyContent: { xs: 'flex-end' },
             }}
           >
             <Typography variant="h4" component="h3">
@@ -344,7 +335,11 @@ export const HomeCaseStudy = ({
   return (
     <Stack
       {...props}
-      direction={imagePosition === 'left' ? 'row' : 'row-reverse'}
+      direction={
+        imagePosition === 'left'
+          ? { xs: 'column-reverse', md: 'row' }
+          : { xs: 'column-reverse', md: 'row-reverse' }
+      }
       spacing={2}
       sx={{
         borderRadius: 4,
@@ -356,7 +351,13 @@ export const HomeCaseStudy = ({
         position: 'relative',
       }}
     >
-      <div style={{ position: 'relative', width: '100%' }}>
+      <Box
+        sx={{
+          position: 'relative',
+          width: '100%',
+          height: { xs: '240px', md: '' },
+        }}
+      >
         <Box
           sx={{
             position: 'absolute',
@@ -365,20 +366,34 @@ export const HomeCaseStudy = ({
             backgroundPosition:
               imagePosition === 'left' ? 'top right' : 'top left',
             backgroundRepeat: 'no-repeat',
-            width: '100%',
+            width: { xs: `calc(100% - ${Theme.spacing(8)} )`, md: '100%' },
             height: '100%',
-            top: 64,
-            right: imagePosition === 'left' ? 0 : '',
-            left: imagePosition === 'right' ? 0 : '',
+            top: { xs: 0, md: 64 },
+            right:
+              imagePosition === 'left' ? { xs: Theme.spacing(4), md: '0' } : '',
+            left:
+              imagePosition === 'right'
+                ? { xs: Theme.spacing(4), md: '0' }
+                : '',
             borderTopRightRadius:
-              imagePosition === 'left' ? Theme.shape.borderRadius * 2 : '',
+              imagePosition === 'left'
+                ? Theme.shape.borderRadius * 2
+                : { xs: Theme.shape.borderRadius * 2, md: '' },
             borderTopLeftRadius:
-              imagePosition === 'right' ? Theme.shape.borderRadius * 2 : '',
+              imagePosition === 'right'
+                ? Theme.shape.borderRadius * 2
+                : { xs: Theme.shape.borderRadius * 2, md: '' },
             boxShadow: 16,
           }}
         />
-      </div>
-      <div style={{ maxWidth: '600px', padding: Theme.spacing(8) }}>
+      </Box>
+      <Box
+        sx={{
+          maxWidth: '600px',
+          padding: Theme.spacing(8),
+          paddingBottom: { xs: Theme.spacing(4), md: '' },
+        }}
+      >
         <Typography variant="h3" component="h3" gutterBottom>
           {heading}
         </Typography>
@@ -390,7 +405,7 @@ export const HomeCaseStudy = ({
             <Chip variant="filled" color="info" label="Coming soon" />
           )}
         </Box>
-      </div>
+      </Box>
       <div
         style={{
           position: 'absolute',
