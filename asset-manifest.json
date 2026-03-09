@@ -1,7 +1,7 @@
 {
   "files": {
-    "main.css": "/portfolio/static/css/main.3fa65a67.css",
-    "main.js": "/portfolio/static/js/main.ea90cdbf.js",
+    "main.css": "/portfolio/static/css/main.138f2eb9.css",
+    "main.js": "/portfolio/static/js/main.ee081045.js",
     "static/media/shaiz-kunhimohammed-resume.pdf": "/portfolio/static/media/shaiz-kunhimohammed-resume.49c9588e3d67a5c4cb23.pdf",
     "static/media/final-prototype-additional-detail-panel-1.jpg": "/portfolio/static/media/final-prototype-additional-detail-panel-1.6c744159aa802dc5f320.jpg",
     "static/media/prototype-3.jpg": "/portfolio/static/media/prototype-3.12ce15cdda03a086d996.jpg",
@@ -74,11 +74,11 @@
     "static/media/final-run-history-3.jpg": "/portfolio/static/media/final-run-history-3.dca4acfecdc209063094.jpg",
     "static/media/react.png": "/portfolio/static/media/react.a3188a496ce8a8fe02cc.png",
     "index.html": "/portfolio/index.html",
-    "main.3fa65a67.css.map": "/portfolio/static/css/main.3fa65a67.css.map",
-    "main.ea90cdbf.js.map": "/portfolio/static/js/main.ea90cdbf.js.map"
+    "main.138f2eb9.css.map": "/portfolio/static/css/main.138f2eb9.css.map",
+    "main.ee081045.js.map": "/portfolio/static/js/main.ee081045.js.map"
   },
   "entrypoints": [
-    "static/css/main.3fa65a67.css",
-    "static/js/main.ea90cdbf.js"
+    "static/css/main.138f2eb9.css",
+    "static/js/main.ee081045.js"
   ]
 }
