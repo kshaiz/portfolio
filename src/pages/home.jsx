@@ -4,7 +4,7 @@ import {
   HomeCaseStudySmall,
   PageContent,
 } from '../components/other'
-import { Stack, Typography, Divider } from '@mui/material'
+import { Stack, Typography, Divider, Box } from '@mui/material'
 import Theme from '../style/theme'
 import { useEffect } from 'react'
 import Gradient1 from '../assets/gradient-1.png'
@@ -28,6 +28,13 @@ const Home = () => {
           el.style.transform = 'translateY(0)'
         }
       })
+      const heading = document.querySelector('.fade-in-heading')
+      console.log(heading)
+      const rect = heading.getBoundingClientRect()
+      if (rect.top < window.innerHeight) {
+        heading.style.opacity = 1
+        heading.style.transform = 'translateY(0)'
+      }
     }
 
     handleScroll()
@@ -46,16 +53,23 @@ const Home = () => {
           backgroundColor: '#FFFFFF',
           borderRadius: `0 0 ${Theme.shape.borderRadiusLarge}px ${Theme.shape.borderRadiusLarge}px`,
         }}
+        className="fade-in-heading"
       >
         <Headline
           heading="Hi, I'm Shaiz,"
           subHeading="Designing user-focused products across industries."
           description="I've spent over a decade designing products & experiences that meet user needs by aligning with business objectives. I've collaborated across various teams, spanning from startups to big corporations, on products in sectors like SEO, fintech, ad marketplace, and eLearning."
-          style={{ maxWidth: 500 }}
+          style={{ maxWidth: { xs: '', md: '500' } }}
         />
-        <div style={{ width: '100%', textAlign: 'center' }}>
+        <Box
+          sx={{
+            display: { xs: 'none', md: 'block' },
+            width: '100%',
+            textAlign: 'center',
+          }}
+        >
           <BrokenImage height="280" />
-        </div>
+        </Box>
       </Stack>
 
       <PageContent>
