@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useRef, useEffect, useState } from 'react'
 import { Link } from 'react-router'
 import {
   ArrowRight,
@@ -14,6 +14,48 @@ import {
 import { Button, Chip } from '@mui/material'
 import brokenImage from '../../assets/broken-image.svg'
 import { ImageWithFallback } from '../components/figma/ImageWithFallback'
+
+function useInView(threshold = 0.12) {
+  const ref = useRef<HTMLDivElement>(null)
+  const [inView, setInView] = useState(false)
+  useEffect(() => {
+    const el = ref.current
+    if (!el) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setInView(true)
+          observer.disconnect()
+        }
+      },
+      { threshold },
+    )
+    observer.observe(el)
+    return () => observer.disconnect()
+  }, [threshold])
+  return { ref, inView }
+}
+
+function AnimateIn({
+  children,
+  delay = 0,
+  className = '',
+}: {
+  children: React.ReactNode
+  delay?: number
+  className?: string
+}) {
+  const { ref, inView } = useInView()
+  return (
+    <div
+      ref={ref}
+      className={`transition-all duration-700 ease-out ${inView ? 'opacity-100 translate-y-0' : 'opacity-0 translate-y-5'} ${className}`}
+      style={delay ? { transitionDelay: `${delay}ms` } : undefined}
+    >
+      {children}
+    </div>
+  )
+}
 
 const colorClasses = {
   blue: {
@@ -101,7 +143,7 @@ function QuickLinkCard({
   return (
     <Link
       to={to}
-      className={`group p-8 border border-neutral-200 rounded-2xl transition-colors bg-white ${hover} ${hoverBorder}`}
+      className={`group flex flex-col h-full p-8 border border-neutral-200 rounded-2xl transition-colors bg-white ${hover} ${hoverBorder}`}
     >
       <div
         className={`w-12 h-12 ${iconBg} ${hoverIconBg} rounded-lg flex items-center justify-center mb-6 transition-colors`}
@@ -158,10 +200,7 @@ export function Home() {
             {/* Blobs inside card */}
             <div className="card-blob card-blob-1"></div>
             <div className="card-blob card-blob-2"></div>
-            <div className="max-w-2xl">
-              {/* <div className="inline-block px-4 py-1.5 bg-neutral-900 text-white text-sm mb-6 rounded-full">
-                Senior Principal Designer
-              </div> */}
+            <AnimateIn className="max-w-2xl">
               <h1 className="text-5xl lg:text-6xl mb-4">Hi, I'm Shaiz,</h1>
               <p className="text-xl mb-8 max-w-xl">
                 I transform complex challenges into clear, intuitive experiences
@@ -182,7 +221,7 @@ export function Home() {
                   View Resume
                 </Link>
               </div>
-            </div>
+            </AnimateIn>
           </div>
         </div>
       </section>
@@ -191,45 +230,54 @@ export function Home() {
       <section className="relative px-8 lg:px-16">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 rounded-b-2xl py-6 lg:py-8 bg-white">
           <div className="grid md:grid-cols-2 gap-12 mb-5 lg:mb-8">
-            <div>
+            <AnimateIn>
               <h2 className="text-4xl mb-2">My philosophy</h2>
               <p className="text-xl">
                 Principles I use to deliver intuitive and scalable product
                 experiences.
               </p>
-            </div>
+            </AnimateIn>
 
             <div className="flex flex-col gap-8">
-              <PhilosophyCard
-                icon={Users}
-                color="blue"
-                title="Collaboration"
-                description="Partner early with users, PMs, Engineering, and QA to align on outcomes. Balance user needs with constraints, timelines, and release realities."
-              />
-              <PhilosophyCard
-                icon={ShieldCheck}
-                color="emerald"
-                title="Design for trust"
-                description={
-                  <>
-                    Build transparency, error prevention, and user control into
-                    every flow. Clear confirmations and <em>emergency exits</em>{' '}
-                    keep users confident in high-stakes actions.
-                  </>
-                }
-              />
-              <PhilosophyCard
-                icon={Layers}
-                color="violet"
-                title="Systems thinking"
-                description="Create scalable patterns and reusable components - not one-off screens. Consistency and conventions reduce ambiguity and speed adoption."
-              />
-              <PhilosophyCard
-                icon={Eye}
-                color="amber"
-                title="Clarity over cleverness"
-                description="Prioritize clarity and usability over novelty to minimize cognitive load. Actions, labels, and options stay visible or easy to retrieve so users don't have to rely on memory."
-              />
+              <AnimateIn delay={100}>
+                <PhilosophyCard
+                  icon={Users}
+                  color="blue"
+                  title="Collaboration"
+                  description="Partner early with users, PMs, Engineering, and QA to align on outcomes. Balance user needs with constraints, timelines, and release realities."
+                />
+              </AnimateIn>
+              <AnimateIn delay={200}>
+                <PhilosophyCard
+                  icon={ShieldCheck}
+                  color="emerald"
+                  title="Design for trust"
+                  description={
+                    <>
+                      Build transparency, error prevention, and user control
+                      into every flow. Clear confirmations and{' '}
+                      <em>emergency exits</em> keep users confident in
+                      high-stakes actions.
+                    </>
+                  }
+                />
+              </AnimateIn>
+              <AnimateIn delay={300}>
+                <PhilosophyCard
+                  icon={Layers}
+                  color="violet"
+                  title="Systems thinking"
+                  description="Create scalable patterns and reusable components - not one-off screens. Consistency and conventions reduce ambiguity and speed adoption."
+                />
+              </AnimateIn>
+              <AnimateIn delay={400}>
+                <PhilosophyCard
+                  icon={Eye}
+                  color="amber"
+                  title="Clarity over cleverness"
+                  description="Prioritize clarity and usability over novelty to minimize cognitive load. Actions, labels, and options stay visible or easy to retrieve so users don't have to rely on memory."
+                />
+              </AnimateIn>
             </div>
           </div>
         </div>
@@ -238,62 +286,66 @@ export function Home() {
       {/* Featured Work Preview */}
       <section className="mt-8 lg:mt-16 px-8 lg:px-16">
         <div className="max-w-7xl mx-auto px-4 lg:px-8 py-4 lg:py-8 rounded-2xl bg-violet-900/5">
-          <div className="mb-8">
+          <AnimateIn className="mb-8">
             <h2 className="text-4xl mb-2">Featured work</h2>
             <p className="text-xl">Recent projects and design solutions</p>
-          </div>
+          </AnimateIn>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <Link
-              to="/case-studies/fintech-dashboard"
-              className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBzY3JlZW58ZW58MXx8fHwxNzcyODk0NTEyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="FinTech Dashboard"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-8">
-                <div className="inline-block px-3 py-1 bg-neutral-100 text-sm mb-4 rounded-full">
-                  Enterprise SaaS
+            <AnimateIn delay={100}>
+              <Link
+                to="/case-studies/fintech-dashboard"
+                className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBzY3JlZW58ZW58MXx8fHwxNzcyODk0NTEyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    alt="FinTech Dashboard"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="text-2xl mb-3">
-                  Content Advisor - AI-Powered SEO Workflow
-                </h3>
-                <p className="text-neutral-600">
-                  Redesigning a complex SEO content workflow to help marketers
-                  create optimized content faster and with greater confidence.
-                </p>
-              </div>
-            </Link>
+                <div className="p-8">
+                  <div className="inline-block px-3 py-1 bg-neutral-100 text-sm mb-4 rounded-full">
+                    Enterprise SaaS
+                  </div>
+                  <h3 className="text-2xl mb-3">
+                    Content Advisor - AI-Powered SEO Workflow
+                  </h3>
+                  <p className="text-neutral-600">
+                    Redesigning a complex SEO content workflow to help marketers
+                    create optimized content faster and with greater confidence.
+                  </p>
+                </div>
+              </Link>
+            </AnimateIn>
 
-            <Link
-              to="/case-studies/mobile-health"
-              className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
-            >
-              <div className="aspect-[4/3] overflow-hidden">
-                <ImageWithFallback
-                  src="https://images.unsplash.com/photo-1661246626039-5429b8f7488a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzcyOTAxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                  alt="Mobile Health App"
-                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                />
-              </div>
-              <div className="p-8">
-                <div className="inline-block px-3 py-1 bg-neutral-100 text-sm mb-4 rounded-full">
-                  Healthcare
+            <AnimateIn delay={200}>
+              <Link
+                to="/case-studies/mobile-health"
+                className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
+              >
+                <div className="aspect-[4/3] overflow-hidden">
+                  <ImageWithFallback
+                    src="https://images.unsplash.com/photo-1661246626039-5429b8f7488a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzcyOTAxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
+                    alt="Mobile Health App"
+                    className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  />
                 </div>
-                <h3 className="text-2xl mb-3">
-                  Competitive Reporting for Local Listings
-                </h3>
-                <p className="text-neutral-600">
-                  Designing scalable competitor insights for multi-location
-                  brands, by balancing clarity with API cost and trial
-                  guardrails.
-                </p>
-              </div>
-            </Link>
+                <div className="p-8">
+                  <div className="inline-block px-3 py-1 bg-neutral-100 text-sm mb-4 rounded-full">
+                    Healthcare
+                  </div>
+                  <h3 className="text-2xl mb-3">
+                    Competitive Reporting for Local Listings
+                  </h3>
+                  <p className="text-neutral-600">
+                    Designing scalable competitor insights for multi-location
+                    brands, by balancing clarity with API cost and trial
+                    guardrails.
+                  </p>
+                </div>
+              </Link>
+            </AnimateIn>
           </div>
         </div>
       </section>
@@ -302,32 +354,38 @@ export function Home() {
       <section className="my-8 lg:my-16 px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
-            <QuickLinkCard
-              to="/case-studies"
-              icon={FolderOpen}
-              color="blue"
-              title="Case Studies"
-              description="Deep dives into product strategy, research and design processes"
-              label="Explore projects"
-            />
+            <AnimateIn delay={0} className="h-full">
+              <QuickLinkCard
+                to="/case-studies"
+                icon={FolderOpen}
+                color="blue"
+                title="Case Studies"
+                description="Deep dives into product strategy, research and design processes"
+                label="Explore projects"
+              />
+            </AnimateIn>
 
-            <QuickLinkCard
-              to="/work-samples"
-              icon={Briefcase}
-              color="violet"
-              title="Work Samples"
-              description="A curated selection of UI designs, prototypes and visual work"
-              label="View samples"
-            />
+            <AnimateIn delay={100} className="h-full">
+              <QuickLinkCard
+                to="/work-samples"
+                icon={Briefcase}
+                color="violet"
+                title="Work Samples"
+                description="A curated selection of UI designs, prototypes and visual work"
+                label="View samples"
+              />
+            </AnimateIn>
 
-            <QuickLinkCard
-              to="/resume"
-              icon={FileText}
-              color="emerald"
-              title="Resume"
-              description="Experience, skills, education and professional background"
-              label="Learn more"
-            />
+            <AnimateIn delay={200} className="h-full">
+              <QuickLinkCard
+                to="/resume"
+                icon={FileText}
+                color="emerald"
+                title="Resume"
+                description="Experience, skills, education and professional background"
+                label="Learn more"
+              />
+            </AnimateIn>
           </div>
         </div>
       </section>
