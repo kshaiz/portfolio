@@ -8,7 +8,8 @@
       "Bash(npm install --save-dev @types/react --legacy-peer-deps)",
       "Bash(ls \"e:/Repository/portfolio\"/.env*)",
       "Bash(\"e:/Repository/portfolio/.gitignore\")",
-      "WebFetch(domain:kshaiz.github.io)"
+      "WebFetch(domain:kshaiz.github.io)",
+      "Bash(npm install:*)"
     ]
   }
 }
