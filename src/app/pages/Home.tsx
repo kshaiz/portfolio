@@ -10,10 +10,12 @@ import {
   Layers,
   Eye,
   type LucideIcon,
+  Icon,
 } from 'lucide-react'
 import { Button, Chip } from '@mui/material'
-import brokenImage from '../../assets/broken-image.svg'
 import { ImageWithFallback } from '../components/figma/ImageWithFallback'
+import tdp from '../../assets/arcesium/tdp/tdp-home.png'
+import competitorInsights from '../../assets/brightedge/local-seo/competitor-insights-hero.png'
 
 function useInView(threshold = 0.12) {
   const ref = useRef<HTMLDivElement>(null)
@@ -146,15 +148,15 @@ function QuickLinkCard({
       className={`group flex flex-col h-full p-8 border border-neutral-200 rounded-2xl transition-colors bg-white ${hover} ${hoverBorder}`}
     >
       <div
-        className={`w-12 h-12 ${iconBg} ${hoverIconBg} rounded-lg flex items-center justify-center mb-6 transition-colors`}
+        className={`w-12 h-12 ${iconBg} ${hoverIconBg} rounded-lg flex items-center justify-center mb-4 transition-colors`}
       >
         <Icon
           className={`${accent} group-hover:text-white transition-colors`}
           size={24}
         />
       </div>
-      <h3 className="text-2xl mb-3">{title}</h3>
-      <p className="text-neutral-600 mb-4">{description}</p>
+      <h3 className="text-2xl mb-2">{title}</h3>
+      <p className="text-neutral-600 mb-8">{description}</p>
       <span className={`inline-flex items-center gap-2 ${accent}`}>
         {label}
         <ArrowRight size={16} />
@@ -176,14 +178,14 @@ function PhilosophyCard({
 }) {
   const { bg, icon } = colorClasses[color] ?? colorClasses.neutral
   return (
-    <div className="group flex items-start gap-6">
+    <div className="group flex items-start gap-8">
       <div
         className={`flex-shrink-0 w-12 h-12 ${bg} rounded-lg flex items-center justify-center`}
       >
         <Icon className={icon} size={24} />
       </div>
       <div>
-        <h3 className="text-2xl mb-1">{title}</h3>
+        <h3 className="text-2xl mb-2">{title}</h3>
         <p>{description}</p>
       </div>
     </div>
@@ -195,7 +197,7 @@ export function Home() {
     <div>
       {/* Hero Section */}
       <section className="relative mt-8 lg:mt-16 px-8 lg:px-16">
-        <div className="max-w-7xl mx-auto px-8 lg:px-16 hero-card rounded-t-2xl py-8 lg:py-16">
+        <div className="max-w-7xl mx-auto px-16 hero-card rounded-t-2xl py-16">
           <div className="relative flex flex-col items-center text-center">
             {/* Blobs inside card */}
             <div className="card-blob card-blob-1"></div>
@@ -209,14 +211,14 @@ export function Home() {
               <div className="flex flex-wrap gap-4 justify-center">
                 <Link
                   to="/case-studies"
-                  className="inline-flex items-center gap-2 bg-slate-700 text-white px-6 py-3 hover:bg-pink-700 transition-colors"
+                  className="inline-flex items-center gap-2 bg-slate-700 text-white px-8 py-4 hover:bg-pink-700 transition-colors"
                 >
                   View Case Studies
                   <ArrowRight size={20} />
                 </Link>
                 <Link
                   to="/resume"
-                  className="inline-flex items-center gap-2 border border-slate-700 text-slate-700 px-6 py-3 hover:bg-pink-100 hover:text-pink-700 hover:border-pink-700 transition-colors"
+                  className="inline-flex items-center gap-2 border border-slate-700 text-slate-700 px-8 py-4 hover:bg-pink-100 hover:text-pink-700 hover:border-pink-700 transition-colors"
                 >
                   View Resume
                 </Link>
@@ -228,8 +230,8 @@ export function Home() {
 
       {/* Philosophy Section */}
       <section className="relative px-8 lg:px-16">
-        <div className="max-w-7xl mx-auto px-4 lg:px-8 rounded-b-2xl py-6 lg:py-8 bg-white">
-          <div className="grid md:grid-cols-2 gap-12 mb-5 lg:mb-8">
+        <div className="max-w-7xl mx-auto px-8 rounded-b-2xl py-8 bg-white">
+          <div className="grid md:grid-cols-2 gap-16 mb-8">
             <AnimateIn>
               <h2 className="text-4xl mb-2">My philosophy</h2>
               <p className="text-xl">
@@ -292,50 +294,44 @@ export function Home() {
           </AnimateIn>
 
           <div className="grid md:grid-cols-2 gap-8">
-            <AnimateIn delay={100}>
+            <AnimateIn delay={100} className="h-full">
               <Link
                 to="/case-studies/fintech-dashboard"
-                className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
+                className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1759752394755-1241472b589d?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkYXNoYm9hcmQlMjBhbmFseXRpY3MlMjBzY3JlZW58ZW58MXx8fHwxNzcyODk0NTEyfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                    alt="FinTech Dashboard"
+                    src={tdp}
+                    alt="True Daily P&L"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-8">
-                  <div className="inline-block px-3 py-1 bg-neutral-100 text-sm mb-4 rounded-full">
-                    Enterprise SaaS
-                  </div>
-                  <h3 className="text-2xl mb-3">
-                    Content Advisor - AI-Powered SEO Workflow
+                  <h3 className="text-2xl mb-4">
+                    Redesigning a process tracker application
                   </h3>
                   <p className="text-neutral-600">
-                    Redesigning a complex SEO content workflow to help marketers
-                    create optimized content faster and with greater confidence.
+                    Reducing support tickets and SLA risk by improving
+                    visibility and diagnosis of delayed P&amp;L runs.
                   </p>
                 </div>
               </Link>
             </AnimateIn>
 
-            <AnimateIn delay={200}>
+            <AnimateIn delay={200} className="h-full">
               <Link
                 to="/case-studies/mobile-health"
-                className="group block bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
+                className="group flex flex-col h-full bg-white rounded-2xl overflow-hidden shadow-sm hover:shadow-xl transition-shadow"
               >
                 <div className="aspect-[4/3] overflow-hidden">
                   <ImageWithFallback
-                    src="https://images.unsplash.com/photo-1661246626039-5429b8f7488a?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxtb2JpbGUlMjBhcHAlMjBkZXNpZ24lMjBpbnRlcmZhY2V8ZW58MXx8fHwxNzcyOTAxMTAxfDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral"
-                    alt="Mobile Health App"
+                    src={competitorInsights}
+                    alt="Competitor Insights"
                     className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   />
                 </div>
                 <div className="p-8">
-                  <div className="inline-block px-3 py-1 bg-neutral-100 text-sm mb-4 rounded-full">
-                    Healthcare
-                  </div>
-                  <h3 className="text-2xl mb-3">
+                  <h3 className="text-2xl mb-4">
                     Competitive Reporting for Local Listings
                   </h3>
                   <p className="text-neutral-600">
@@ -354,28 +350,73 @@ export function Home() {
       <section className="my-8 lg:my-16 px-8 lg:px-16">
         <div className="max-w-7xl mx-auto">
           <div className="grid md:grid-cols-3 gap-8">
-            <AnimateIn delay={0} className="h-full">
+            {/* <AnimateIn delay={0} className="h-full">
               <QuickLinkCard
                 to="/case-studies"
                 icon={FolderOpen}
                 color="blue"
-                title="Case Studies"
+                title="Case studies"
                 description="Deep dives into product strategy, research and design processes"
                 label="Explore projects"
               />
+            </AnimateIn> */}
+            <AnimateIn delay={0} className="h-full">
+              <div
+                className={`group flex flex-col h-full p-8 border border-neutral-200 rounded-2xl transition-colors bg-slate-100`}
+              >
+                <div
+                  className={`w-12 h-12 bg-blue-100  rounded-lg flex items-center justify-center mb-4 transition-colors`}
+                >
+                  <FolderOpen
+                    className={`text-blue-700 transition-colors`}
+                    size={24}
+                  />
+                </div>
+                <h3 className="text-2xl mb-2">Case studies</h3>
+                <p className="text-neutral-600 mb-8">
+                  Deep dives into product strategy, research and design
+                  processes
+                </p>
+                <div>
+                  <span className="inline-flex px-4 py-2 bg-slate-300 text-slate-900 rounded-lg text-sm">
+                    Coming soon...
+                  </span>
+                </div>
+              </div>
             </AnimateIn>
-
-            <AnimateIn delay={100} className="h-full">
+            {/* <AnimateIn delay={100} className="h-full">
               <QuickLinkCard
                 to="/work-samples"
                 icon={Briefcase}
                 color="violet"
-                title="Work Samples"
+                title="Work samples"
                 description="A curated selection of UI designs, prototypes and visual work"
                 label="View samples"
               />
+            </AnimateIn> */}
+            <AnimateIn delay={100} className="h-full">
+              <div
+                className={`group flex flex-col h-full p-8 border border-neutral-200 rounded-2xl transition-colors bg-slate-100`}
+              >
+                <div
+                  className={`w-12 h-12 bg-violet-100  rounded-lg flex items-center justify-center mb-4 transition-colors`}
+                >
+                  <FolderOpen
+                    className={`text-violet-700 transition-colors`}
+                    size={24}
+                  />
+                </div>
+                <h3 className="text-2xl mb-2">Work samples</h3>
+                <p className="text-neutral-600 mb-8">
+                  A curated selection of UI designs, prototypes and visual work
+                </p>
+                <div>
+                  <span className="inline-flex px-4 py-2 bg-slate-300 text-slate-900 rounded-lg text-sm">
+                    Coming soon...
+                  </span>
+                </div>
+              </div>
             </AnimateIn>
-
             <AnimateIn delay={200} className="h-full">
               <QuickLinkCard
                 to="/resume"

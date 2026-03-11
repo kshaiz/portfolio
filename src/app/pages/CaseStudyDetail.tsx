@@ -10,7 +10,7 @@ export function CaseStudyDetail() {
 
   if (!study) {
     return (
-      <div className="py-20 text-center">
+      <div className="py-16 text-center">
         <h1 className="text-4xl mb-4">Case study not found</h1>
         <Link to="/case-studies" className="text-neutral-600 hover:text-neutral-900">
           Back to case studies
@@ -24,7 +24,7 @@ export function CaseStudyDetail() {
     <div>
       {/* Back Button */}
       <div className="border-b border-neutral-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8 py-6">
+        <div className="max-w-7xl mx-auto px-8 py-8">
           <Link
             to="/case-studies"
             className="inline-flex items-center gap-2 text-neutral-600 hover:text-neutral-900 transition-colors"
@@ -36,17 +36,17 @@ export function CaseStudyDetail() {
       </div>
 
       {/* Hero */}
-      <div className="py-20 lg:py-32">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mb-12">
-            <div className="inline-block px-3 py-1 bg-neutral-100 text-sm mb-6 rounded-full">
+      <div className="py-16 lg:py-32">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="max-w-4xl mb-16">
+            <div className="inline-block px-4 py-2 bg-neutral-100 text-sm mb-8 rounded-full">
               {study.category}
             </div>
-            <h1 className="text-5xl lg:text-6xl mb-6">{study.title}</h1>
+            <h1 className="text-5xl lg:text-6xl mb-8">{study.title}</h1>
             <p className="text-2xl text-neutral-600">{study.subtitle}</p>
           </div>
 
-          <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-neutral-100 mb-12">
+          <div className="aspect-[16/9] rounded-2xl overflow-hidden bg-neutral-100 mb-16">
             <ImageWithFallback
               src={study.heroImage}
               alt={study.title}
@@ -55,7 +55,7 @@ export function CaseStudyDetail() {
           </div>
 
           {/* Project Details */}
-          <div className="grid md:grid-cols-4 gap-8 py-12 border-y border-neutral-200">
+          <div className="grid md:grid-cols-4 gap-8 py-16 border-y border-neutral-200">
             <div>
               <div className="text-sm text-neutral-600 mb-2">Role</div>
               <div className="text-lg">{study.role}</div>
@@ -77,25 +77,25 @@ export function CaseStudyDetail() {
       </div>
 
       {/* Overview */}
-      <div className="py-20 bg-neutral-50">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl mb-6">Overview</h2>
+      <div className="py-16 bg-neutral-50">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-3xl mb-8">Overview</h2>
           <p className="text-lg text-neutral-700 leading-relaxed">{study.overview}</p>
         </div>
       </div>
 
       {/* Challenge */}
-      <div className="py-20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl mb-6">The Challenge</h2>
+      <div className="py-16">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-3xl mb-8">The Challenge</h2>
           <p className="text-lg text-neutral-700 leading-relaxed">{study.challenge}</p>
         </div>
       </div>
 
       {/* Approach */}
-      <div className="py-20 bg-neutral-50">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl mb-6">Approach</h2>
+      <div className="py-16 bg-neutral-50">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-3xl mb-8">Approach</h2>
           <ul className="space-y-4">
             {study.approach.map((item, index) => (
               <li key={index} className="flex gap-4">
@@ -108,8 +108,8 @@ export function CaseStudyDetail() {
       </div>
 
       {/* Research */}
-      <div className="py-20">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <div className="py-16">
+        <div className="max-w-4xl mx-auto px-8">
           <h2 className="text-3xl mb-4">{study.research.title}</h2>
           <p className="text-lg text-neutral-700 mb-8">{study.research.description}</p>
           <div className="bg-neutral-50 rounded-2xl p-8">
@@ -127,14 +127,14 @@ export function CaseStudyDetail() {
       </div>
 
       {/* Solution */}
-      <div className="py-20 bg-neutral-50">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
+      <div className="py-16 bg-neutral-50">
+        <div className="max-w-4xl mx-auto px-8">
           <h2 className="text-3xl mb-4">{study.solution.title}</h2>
           <p className="text-lg text-neutral-700 mb-8">{study.solution.description}</p>
-          <div className="grid md:grid-cols-2 gap-6">
+          <div className="grid md:grid-cols-2 gap-8">
             {study.solution.features.map((feature, index) => (
-              <div key={index} className="bg-white rounded-xl p-6">
-                <CheckCircle2 className="mb-3 text-neutral-900" size={24} />
+              <div key={index} className="bg-white rounded-xl p-8">
+                <CheckCircle2 className="mb-4 text-neutral-900" size={24} />
                 <p className="text-neutral-700">{feature}</p>
               </div>
             ))}
@@ -143,9 +143,9 @@ export function CaseStudyDetail() {
       </div>
 
       {/* Impact */}
-      <div className="py-20">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
-          <div className="max-w-4xl mb-12">
+      <div className="py-16">
+        <div className="max-w-7xl mx-auto px-8">
+          <div className="max-w-4xl mb-16">
             <h2 className="text-3xl mb-4">Impact</h2>
             <p className="text-lg text-neutral-600">
               The redesign delivered significant improvements across key metrics.
@@ -154,8 +154,8 @@ export function CaseStudyDetail() {
           <div className="grid md:grid-cols-3 gap-8">
             {study.impact.map((item, index) => (
               <div key={index} className="bg-neutral-50 rounded-2xl p-8">
-                <div className="text-4xl lg:text-5xl mb-3">{item.value}</div>
-                <div className="text-xl mb-3">{item.metric}</div>
+                <div className="text-4xl lg:text-5xl mb-4">{item.value}</div>
+                <div className="text-xl mb-4">{item.metric}</div>
                 <p className="text-neutral-600">{item.description}</p>
               </div>
             ))}
@@ -164,10 +164,10 @@ export function CaseStudyDetail() {
       </div>
 
       {/* Learnings */}
-      <div className="py-20 bg-neutral-50">
-        <div className="max-w-4xl mx-auto px-6 lg:px-8">
-          <h2 className="text-3xl mb-6">Key Learnings</h2>
-          <ul className="space-y-6">
+      <div className="py-16 bg-neutral-50">
+        <div className="max-w-4xl mx-auto px-8">
+          <h2 className="text-3xl mb-8">Key Learnings</h2>
+          <ul className="space-y-8">
             {study.learnings.map((learning, index) => (
               <li key={index} className="flex gap-4">
                 <span className="flex-shrink-0 w-8 h-8 bg-neutral-900 text-white rounded-full flex items-center justify-center text-sm">
@@ -181,8 +181,8 @@ export function CaseStudyDetail() {
       </div>
 
       {/* Next Case Study */}
-      <div className="py-20 border-t border-neutral-200">
-        <div className="max-w-7xl mx-auto px-6 lg:px-8">
+      <div className="py-16 border-t border-neutral-200">
+        <div className="max-w-7xl mx-auto px-8">
           <Link
             to="/case-studies"
             className="inline-flex items-center gap-2 text-lg hover:gap-3 transition-all"

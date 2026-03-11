@@ -96,11 +96,11 @@ export function WorkSamples() {
   };
 
   return (
-    <div className="py-20 lg:py-32">
-      <div className="max-w-7xl mx-auto px-6 lg:px-8">
+    <div className="py-16 lg:py-32">
+      <div className="max-w-7xl mx-auto px-8">
         {/* Header */}
         <div className="max-w-3xl mb-16">
-          <h1 className="text-5xl lg:text-6xl mb-6">Work Samples</h1>
+          <h1 className="text-5xl lg:text-6xl mb-8">Work Samples</h1>
           <p className="text-xl text-neutral-600">
             A curated collection of UI designs, prototypes, research artifacts, and design
             system work from various projects.
@@ -108,7 +108,7 @@ export function WorkSamples() {
         </div>
 
         {/* Filter Tabs */}
-        <div className="flex flex-wrap gap-3 mb-12 pb-8 border-b border-neutral-200">
+        <div className="flex flex-wrap gap-4 mb-16 pb-8 border-b border-neutral-200">
           {categories.map((category) => (
             <button
               key={category}
@@ -141,7 +141,7 @@ export function WorkSamples() {
                   className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                 />
               </div>
-              <div className="inline-block px-3 py-1 bg-neutral-100 text-sm mb-3 rounded-full">
+              <div className="inline-block px-4 py-2 bg-neutral-100 text-sm mb-4 rounded-full">
                 {sample.category}
               </div>
               <h3 className="text-xl mb-2 group-hover:text-neutral-600 transition-colors">
@@ -152,7 +152,7 @@ export function WorkSamples() {
                 {sample.tags.map((tag) => (
                   <span
                     key={tag}
-                    className="text-xs text-neutral-500 border border-neutral-300 px-2 py-1 rounded"
+                    className="text-xs text-neutral-500 border border-neutral-300 px-2 py-2 rounded"
                   >
                     {tag}
                   </span>
@@ -163,9 +163,9 @@ export function WorkSamples() {
         </div>
 
         {/* Additional Content Note */}
-        <div className="mt-20 p-8 bg-neutral-50 rounded-2xl text-center">
+        <div className="mt-16 p-8 bg-neutral-50 rounded-2xl text-center">
           <ExternalLink className="mx-auto mb-4 text-neutral-600" size={32} />
-          <h3 className="text-2xl mb-3">More work available upon request</h3>
+          <h3 className="text-2xl mb-4">More work available upon request</h3>
           <p className="text-neutral-600 max-w-2xl mx-auto">
             Due to confidentiality agreements, some projects cannot be displayed publicly.
             I'm happy to share additional work samples and discuss specific projects in more detail.
