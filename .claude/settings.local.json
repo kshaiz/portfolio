@@ -10,7 +10,8 @@
       "Bash(\"e:/Repository/portfolio/.gitignore\")",
       "WebFetch(domain:kshaiz.github.io)",
       "Bash(npm install:*)",
-      "Bash(\"e:\\\\Repository\\\\portfolio\\\\public\\\\.nojekyll\")"
+      "Bash(\"e:\\\\Repository\\\\portfolio\\\\public\\\\.nojekyll\")",
+      "Bash(gh run:*)"
     ]
   }
 }
