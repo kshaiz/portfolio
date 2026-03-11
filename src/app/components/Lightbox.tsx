@@ -3,7 +3,7 @@ import { X, ChevronLeft, ChevronRight } from "lucide-react";
 import { ImageWithFallback } from "./figma/ImageWithFallback";
 
 interface LightboxProps {
-  images: { src: string; alt: string }[];
+  images: { src: string; alt: string; title?: string; videoUrl?: string }[];
   currentIndex: number;
   onClose: () => void;
   onNext: () => void;
@@ -48,8 +48,8 @@ export function Lightbox({ images, currentIndex, onClose, onNext, onPrevious }: 
       </button>
 
       {/* Counter */}
-      <div className="absolute top-6 left-6 text-white/80 text-lg z-10">
-        {currentIndex + 1} / {images.length}
+      <div className="absolute top-6 left-6 z-10">
+        <p className="text-white/60 text-sm">{currentIndex + 1} of {images.length}</p>
       </div>
 
       {/* Previous button */}
@@ -81,20 +81,32 @@ export function Lightbox({ images, currentIndex, onClose, onNext, onPrevious }: 
       )}
 
       {/* Image */}
-      <div 
-        className="max-w-7xl max-h-[90vh] mx-auto px-6"
+      <div
+        className="flex flex-col items-center max-w-7xl mx-auto px-6"
         onClick={(e) => e.stopPropagation()}
       >
-        <ImageWithFallback
-          src={currentImage.src}
-          alt={currentImage.alt}
-          className="max-w-full max-h-[90vh] object-contain rounded-lg"
-        />
-        {currentImage.alt && (
-          <p className="text-white/80 text-center mt-4 text-lg">
-            {currentImage.alt}
-          </p>
+        {currentImage.videoUrl ? (
+          <iframe
+            src={currentImage.videoUrl}
+            className="w-[80vw] max-w-4xl aspect-video rounded-lg"
+            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+            allowFullScreen
+          />
+        ) : (
+          <ImageWithFallback
+            src={currentImage.src}
+            alt={currentImage.alt}
+            className="max-w-full max-h-[80vh] object-cover rounded-lg"
+          />
         )}
+        <div className="mt-3 text-center">
+          {currentImage.title && (
+            <p className="text-white text-base font-medium">{currentImage.title}</p>
+          )}
+          {currentImage.alt && (
+            <p className="text-white/60 text-sm mt-1" dangerouslySetInnerHTML={{ __html: currentImage.alt }} />
+          )}
+        </div>
       </div>
     </div>
   );

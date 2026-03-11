@@ -10,7 +10,7 @@ export function Navigation() {
   const navItems = [
     { name: 'Home', path: '/' },
     // { name: 'Case Studies', path: '/case-studies' },
-    // { name: 'Work Samples', path: '/work-samples' },
+    { name: 'Work Samples', path: '/work-samples' },
     { name: 'Resume', path: '/resume' },
   ]
 

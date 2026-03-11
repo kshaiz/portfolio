@@ -11,7 +11,9 @@
       "WebFetch(domain:kshaiz.github.io)",
       "Bash(npm install:*)",
       "Bash(\"e:\\\\Repository\\\\portfolio\\\\public\\\\.nojekyll\")",
-      "Bash(gh run:*)"
+      "Bash(gh run:*)",
+      "Bash(sed -i 's/description:/caption:/g' src/app/pages/WorkSamples.tsx)",
+      "Bash(sed -i 's/img\\\\.description/img.caption/g' src/app/pages/WorkSamples.tsx)"
     ]
   }
 }

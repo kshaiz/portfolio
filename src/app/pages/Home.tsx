@@ -384,7 +384,7 @@ export function Home() {
                 </div>
               </div>
             </AnimateIn>
-            {/* <AnimateIn delay={100} className="h-full">
+            <AnimateIn delay={100} className="h-full">
               <QuickLinkCard
                 to="/work-samples"
                 icon={Briefcase}
@@ -393,29 +393,6 @@ export function Home() {
                 description="A curated selection of UI designs, prototypes and visual work"
                 label="View samples"
               />
-            </AnimateIn> */}
-            <AnimateIn delay={100} className="h-full">
-              <div
-                className={`group flex flex-col h-full p-8 border border-neutral-200 rounded-2xl transition-colors bg-slate-100`}
-              >
-                <div
-                  className={`w-12 h-12 bg-violet-100  rounded-lg flex items-center justify-center mb-4 transition-colors`}
-                >
-                  <FolderOpen
-                    className={`text-violet-700 transition-colors`}
-                    size={24}
-                  />
-                </div>
-                <h3 className="text-2xl mb-2">Work samples</h3>
-                <p className="text-neutral-600 mb-8">
-                  A curated selection of UI designs, prototypes and visual work
-                </p>
-                <div>
-                  <span className="inline-flex px-4 py-2 bg-slate-300 text-slate-900 rounded-lg text-sm">
-                    Coming soon...
-                  </span>
-                </div>
-              </div>
             </AnimateIn>
             <AnimateIn delay={200} className="h-full">
               <QuickLinkCard
