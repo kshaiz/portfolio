@@ -9,7 +9,8 @@
       "Bash(ls \"e:/Repository/portfolio\"/.env*)",
       "Bash(\"e:/Repository/portfolio/.gitignore\")",
       "WebFetch(domain:kshaiz.github.io)",
-      "Bash(npm install:*)"
+      "Bash(npm install:*)",
+      "Bash(\"e:\\\\Repository\\\\portfolio\\\\public\\\\.nojekyll\")"
     ]
   }
 }

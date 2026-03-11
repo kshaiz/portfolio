@@ -4,32 +4,112 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Shaiz | Product Designer | Canada</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300..700;1,300..700&family=DM+Sans:ital,opsz,wght@0,9..40,100..1000;1,9..40,100..1000&display=swap"
+      rel="stylesheet"
+    />
     <script>
       // Restore path redirected via 404.html for GitHub Pages SPA support
-      (function (l) {
-        if (l.search[1] === "/") {
+      ;(function (l) {
+        if (l.search[1] === '/') {
           var decoded = l.search
             .slice(1)
-            .split("&")
+            .split('&')
             .map(function (s) {
-              return s.replace(/~and~/g, "&");
-            });
+              return s.replace(/~and~/g, '&')
+            })
           window.history.replaceState(
             null,
             null,
             l.pathname.slice(0, -1) +
               decoded[0] +
-              (decoded[1] ? "?" + decoded[1] : "") +
-              l.hash
-          );
+              (decoded[1] ? '?' + decoded[1] : '') +
+              l.hash,
+          )
         }
-      })(window.location);
+      })(window.location)
     </script>
-    <script type="module" crossorigin src="/portfolio/assets/index-a32Wof-T.js"></script>
-    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-DRK0FhsF.css">
+    <script type="module" crossorigin src="/portfolio/assets/index-Cv_Rvl_C.js"></script>
+    <link rel="stylesheet" crossorigin href="/portfolio/assets/index-BCUCogRJ.css">
   </head>
 
   <body>
-    <div id="root"></div>
+    <!-- <div class="cursor" id="cursor"></div>
+    <div class="cursor-ring" id="cursorRing"></div> -->
+
+    <!-- Background layers -->
+    <div class="bg-base"></div>
+    <div class="blob blob-1"></div>
+    <div class="blob blob-2"></div>
+    <div class="blob blob-3"></div>
+
+    <!-- Geometric accents -->
+    <div class="accents">
+      <div class="arc arc-1"></div>
+      <div class="arc arc-2"></div>
+      <div class="arc arc-3"></div>
+      <div class="hr-accent hr-1"></div>
+      <div class="hr-accent hr-2"></div>
+      <div class="hr-accent hr-3"></div>
+      <div class="dot-field" id="dotField"></div>
+    </div>
+
+    <!-- Grain -->
+    <div class="grain"></div>
+
+    <!-- Content -->
+    <div id="root"></div>
+    <!-- <script>
+      // Custom cursor
+      const cursor = document.getElementById('cursor')
+      const ring = document.getElementById('cursorRing')
+      let mx = 0,
+        my = 0,
+        rx = 0,
+        ry = 0
+
+      document.addEventListener('mousemove', (e) => {
+        mx = e.clientX
+        my = e.clientY
+        cursor.style.left = mx + 'px'
+        cursor.style.top = my + 'px'
+      })
+
+      ;(function animate() {
+        rx += (mx - rx) * 0.1
+        ry += (my - ry) * 0.1
+        ring.style.left = rx + 'px'
+        ring.style.top = ry + 'px'
+        requestAnimationFrame(animate)
+      })()
+
+      // Generate dot field
+      const field = document.getElementById('dotField')
+      const positions = [
+        [10, 15],
+        [25, 70],
+        [80, 20],
+        [92, 55],
+        [65, 80],
+        [40, 35],
+        [55, 60],
+        [18, 88],
+        [73, 10],
+        [88, 90],
+        [35, 50],
+        [7, 45],
+      ]
+      positions.forEach(([l, t], i) => {
+        const d = document.createElement('div')
+        d.className = 'dot'
+        d.style.left = l + '%'
+        d.style.top = t + '%'
+        d.style.animationDelay = i * 0.4 + 's'
+        d.style.animationDuration = 4 + (i % 3) + 's'
+        field.appendChild(d)
+      })
+    </script> -->
   </body>
 </html>
