@@ -209,13 +209,13 @@ export function Home() {
                 through research, strategy and collaboration.
               </p>
               <div className="flex flex-wrap gap-4 justify-center">
-                <Link
+                {/* <Link
                   to="/case-studies"
                   className="inline-flex items-center gap-2 bg-slate-700 text-white px-8 py-4 hover:bg-pink-700 transition-colors"
                 >
                   View Case Studies
                   <ArrowRight size={20} />
-                </Link>
+                </Link> */}
                 <Link
                   to="/resume"
                   className="inline-flex items-center gap-2 border border-slate-700 text-slate-700 px-8 py-4 hover:bg-pink-100 hover:text-pink-700 hover:border-pink-700 transition-colors"
